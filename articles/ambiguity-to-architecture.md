@@ -1,10 +1,8 @@
 # From Ambiguity to Architecture: A Practical Problem-Solving Framework
 
-Senior engineers are rarely handed clean problems.
+> **30-second read:** Good architecture starts before the boxes. Clarify the outcome, users, constraints and failure modes first; then choose boundaries, trade-offs and implementation based on evidence.
 
-The work usually starts with an incomplete request, conflicting constraints, multiple stakeholders, an existing system, and an outcome that matters more than the implementation.
-
-The goal is not to jump from ambiguity to a diagram. The goal is to make enough of the problem explicit that the architecture becomes a consequence of good reasoning.
+> **2-minute read:** Senior engineering problems rarely arrive as clean requirements. Start by translating an ambiguous request into a measurable outcome and a concrete user journey. Separate functional and non-functional requirements, identify trust and ownership boundaries, then compare design options explicitly. Design failure paths before polishing the happy path. Finally, validate the architecture against the assumption most likely to break it. Architecture decision records are useful because they preserve context, alternatives and consequences instead of only recording the final answer.
 
 ## 1. Frame the outcome
 
@@ -18,11 +16,11 @@ Ask:
 - How will we know it improved?
 - What happens if we do nothing?
 
-A vague request such as "make this scalable" is not an architecture requirement. A requirement such as "support a 10x increase in peak workload without increasing failure propagation" is much closer.
+A vague request such as “make this scalable” is not an architecture requirement. A requirement such as “support a 10x increase in peak workload without increasing failure propagation” is much closer.
 
 ## 2. Map the journey and context
 
-Architecture decisions are only meaningful relative to context.
+Architecture decisions are meaningful only relative to context.
 
 ```text
 Persona
@@ -103,8 +101,6 @@ For each major boundary, define:
 
 Then build the smallest vertical slice that proves the important assumption.
 
-For example:
-
 ```text
 Request
   ↓
@@ -137,7 +133,7 @@ Validation can include:
 - security and data-boundary review
 - migration or rollback rehearsal
 
-The strongest validation question is often simple:
+The strongest validation question is often:
 
 > What assumption would have to be false for this architecture to fail?
 
@@ -153,8 +149,24 @@ A good architecture explanation lets a reader answer three questions quickly:
 
 A diagram is a compression mechanism for complexity. The surrounding narrative supplies the reasoning the diagram cannot show.
 
+## Reference case: architecture decisions that survive the original team
+
+Martin Fowler's Architecture Decision Record guidance emphasizes recording a decision together with its context and ramifications, with alternatives and consequences captured so future engineers can understand why the system looks the way it does.
+
+The useful lesson is not “write more documents.” It is: **preserve decisions at the point where they affect the codebase, and make those decisions easy to revisit when their assumptions change.**
+
+Source: [Architecture Decision Record — Martin Fowler](https://martinfowler.com/bliki/ArchitectureDecisionRecord.html)
+
 ## The pattern
 
 **Ambiguity → framing → context → boundaries → trade-offs → failure modes → architecture → implementation → validation → explanation.**
 
 The technology changes. The reasoning pattern travels.
+
+## Research & further reading
+
+- [Architecture Decision Record — Martin Fowler](https://martinfowler.com/bliki/ArchitectureDecisionRecord.html)
+- [Scaling the Practice of Architecture, Conversationally — Martin Fowler](https://martinfowler.com/articles/scaling-architecture-conversationally.html)
+- [Building Infrastructure Platforms — Martin Fowler](https://www.martinfowler.com/articles/building-infrastructure-platform.html)
+- [A Survey of Context Engineering for Large Language Models — alphaXiv](https://www.alphaxiv.org/abs/2507.13334)
+- [Code Digital Twin: A Knowledge Infrastructure for AI-Assisted Complex Software Development — alphaXiv](https://www.alphaxiv.org/abs/2503.07967)
