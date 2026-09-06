@@ -1,107 +1,157 @@
 # LLM Evaluation Is a Systems Problem, Not Just a Prompt Problem
 
-When teams start testing LLM-powered systems, it is tempting to evaluate only the prompt and the final answer.
+When teams start testing LLM-powered systems, it is tempting to evaluate the prompt and the final answer.
 
 That misses most of the system.
 
-A useful evaluation model considers the entire chain:
+A useful evaluation model follows the complete journey:
 
 ```text
 Persona / intent
       ↓
-Input context
+Input + retrieved context
       ↓
-Prompt / instructions
+Instructions / prompt
       ↓
 Model + tools
       ↓
-Output
+Output / action
       ↓
-Evaluation rubric
+Evaluation evidence
       ↓
-Decision / feedback
+Decision + feedback
 ```
+
+A plausible answer can still be a failed system outcome.
 
 ## Test the journey, not just the response
 
-A response can look plausible and still fail the user's actual goal.
+For an important scenario, capture the contract around the response:
 
-For every important scenario, capture:
+| Dimension | What to define |
+|---|---|
+| Persona | Who is using the system? |
+| Intent | What are they trying to accomplish? |
+| Context | What information is the model allowed to use? |
+| Behaviour | What should the system do? |
+| Output | What form and properties should the result have? |
+| Failure | What must never happen? |
+| Evidence | What observations support the verdict? |
 
-- Persona
-- User journey
-- Intent
-- Input data
-- Expected behaviour
-- Output data
-- Failure conditions
-- Evaluation criteria
+This makes evaluation explainable and reproducible.
 
-This makes test cases explainable and reproducible.
+## Evaluation layers
 
-## Why L4 testing matters
+I think about AI regression as progressively broader checks.
 
-For higher-risk AI workflows, regression should move beyond happy-path correctness.
+**L1 — execution**  
+Does the workflow run and return a structurally valid result?
 
-Think in layers:
+**L2 — scenario correctness**  
+Does it satisfy representative user journeys?
 
-**L1 — basic functional checks**  
-Does the workflow execute?
+**L3 — edge and failure behaviour**  
+How does it behave with missing, conflicting, adversarial, or malformed inputs?
 
-**L2 — scenario checks**  
-Does it behave correctly for representative inputs?
+**L4 — system impact**  
+What changed upstream or downstream, and which behaviours could have shifted as a consequence?
 
-**L3 — edge and failure checks**  
-How does it behave under ambiguity, missing information, or malformed input?
+The higher the layer, the more important system context becomes.
 
-**L4 — system-level impact**  
-What is the blast radius of a change, and which downstream behaviours may have shifted?
+## Model evaluation as evidence, not intuition
 
-L4 is where context, dependency mapping, evaluation data, and architectural understanding become critical.
+For semantic evaluation, a model-based judge can be useful. But a score without evidence is difficult to trust.
 
-## LLM-as-a-judge: useful, but bounded
+A stronger evaluator receives:
 
-An LLM can act as a judge when the evaluation criterion is clearly defined and the task benefits from semantic assessment.
+- a clear rubric
+- the scenario and expected behaviour
+- permitted evidence
+- calibration examples
+- explicit failure conditions
+- scoring rules
+- a confidence or review threshold
 
-But the judge should not become an unbounded source of truth.
+```text
+Output
+  ↓
+Context + rubric + evidence
+  ↓
+Semantic evaluator
+  ↓
+Score + rationale
+  ↓
+Policy threshold
+ ↙      ↓       ↘
+pass   review   fail
+```
 
-A stronger evaluation design specifies:
+Deterministic properties should stay deterministic. Semantic properties can use semantic evaluation.
 
-- A rubric
-- Evidence requirements
-- Scoring criteria
-- Known failure modes
-- Calibration examples
-- Thresholds for human review
+## Context is often the hidden variable
 
-Use deterministic checks where deterministic checks are sufficient. Use model-based judgement where semantic judgement is actually needed.
+Consider two evaluators judging the same response.
 
-## The bigger idea: evaluation as context engineering
+One sees only the prompt and answer.
 
-The highest-leverage part of an evaluation system is often the context supplied to the evaluator.
+The other also sees:
 
-If the evaluator knows the persona, journey, expected behaviour, input/output contract, relevant dependencies, and change history, it can reason about correctness much more meaningfully.
+```text
+Persona
+Journey
+Input contract
+Expected behaviour
+Relevant dependencies
+Known failure modes
+Change history
+```
 
-That leads to an important shift:
+The second evaluator has a much better chance of identifying a real regression rather than merely generating a plausible opinion.
 
-> The goal is not to make an LLM judge smarter in isolation. The goal is to give the judge the right context and evidence.
+This is why evaluation quality is tightly coupled to context quality.
 
-## A practical architecture
+## Practical architecture
 
 ```text
 Repository / specifications
-          ↓
-Context extraction
-          ↓
-Knowledge artifacts
-          ↓
-Test scenarios
-          ↓
-Deterministic assertions + LLM evaluation
-          ↓
-Regression evidence
-          ↓
-Human review where needed
+           ↓
+     Context extraction
+           ↓
+  Knowledge artifacts
+     ↙        ↓        ↘
+journeys   contracts  dependencies
+     \        |        /
+       Scenario selection
+              ↓
+     Candidate test cases
+              ↓
+  Deterministic + semantic checks
+              ↓
+       Evidence store
+              ↓
+       Human review / release gate
 ```
 
-This is the direction I find compelling in AI engineering: combining software engineering discipline with the new reasoning capabilities of LLMs.
+The important engineering property is traceability: a reviewer should be able to move from a verdict back to the scenario, context, evidence, and rule that produced it.
+
+## Failure modes worth testing explicitly
+
+AI systems introduce classes of failure that ordinary API tests can underrepresent:
+
+- correct-looking but unsupported answers
+- stale or irrelevant retrieved context
+- instruction conflicts
+- tool calls that are syntactically valid but semantically wrong
+- inconsistent output across equivalent inputs
+- evaluation drift after model or prompt changes
+- regressions caused by a dependency rather than the changed component
+
+A good test strategy makes these failure modes visible before they become production surprises.
+
+## The bigger idea
+
+The goal is not to make a model sound more confident.
+
+The goal is to make the **system's behaviour measurable, explainable, and safe to change**.
+
+> Better AI evaluation comes from better context, clearer contracts, stronger evidence, and bounded judgement — not simply from a better prompt.
