@@ -1,68 +1,153 @@
 # Context Engineering for Regression Automation
 
-Software regression work often fails for a reason that has little to do with the test framework: the context required to make a good testing decision lives in people's heads.
+Regression work often fails for a reason that has little to do with the test framework: the context required to make a good testing decision is distributed across source code, configurations, contracts, historical knowledge, and people's memory.
 
-A code change lands, someone remembers a few critical flows, a test suite runs, and the team tries to infer whether the blast radius is contained. The hidden problem is that the reasoning behind the tests was never made portable.
+A change lands. A test suite runs. The team still has to answer a harder question: **what behaviour should we be worried about, and why?**
 
-## The idea
+The useful shift is to make that reasoning explicit enough for people and machines to reuse.
 
-Context engineering is the practice of deliberately collecting, structuring, and supplying the context an AI system needs to perform a task reliably.
+## The problem
 
-For engineering regression, that means treating the **repository as the source of truth**, extracting useful knowledge into human-readable artifacts, and feeding that context into downstream validation steps.
-
-A useful flow looks like:
+Traditional regression automation is usually optimized around executable checks:
 
 ```text
-Source code / configuration / contracts
-                ↓
-      Context extraction
-                ↓
-     Human-readable knowledge
-                ↓
-      Test generation
-                ↓
-  L4 regression + blast-radius checks
-                ↓
-   Evidence + judgement + feedback
+change → run tests → pass/fail
 ```
 
-## Why this matters
+That works for deterministic behaviour. It becomes weaker when correctness depends on business journeys, dependencies, data shape, side effects, or interactions between services.
 
-A regression test should answer more than "did the API return 200?"
+The missing layer is context.
 
-For each meaningful test, we should be able to explain:
+## The model
 
-- Who is the persona?
-- What user journey are we protecting?
-- Why does this journey exist?
-- What input and output data are involved?
-- What assumptions or dependencies matter?
-- What changed?
-- What could that change break?
-- What evidence tells us the behaviour remains safe?
+Treat the repository and its observable contracts as the source of truth, then turn scattered engineering knowledge into structured artifacts that downstream validation can consume.
 
-That changes regression from a collection of scripts into a **knowledge system**.
+```text
+Source code / configs / contracts
+              ↓
+       Context extraction
+              ↓
+   Structured knowledge artifacts
+              ↓
+        Scenario mapping
+              ↓
+   Test generation / selection
+              ↓
+Deterministic checks + semantic evaluation
+              ↓
+      Evidence + review
+```
 
-## Where LLMs fit
+The point is not to generate more tests. It is to improve the quality of the decision about **which tests matter**.
 
-LLMs are useful when the task requires reasoning over large, distributed context, but an LLM should not be treated as a magic test generator.
+## What context should survive a code change?
 
-A stronger model is:
+For every important journey, capture enough information to reconstruct the reasoning:
 
-**Context engineering + deterministic checks + LLM judgement + human review.**
+| Dimension | Example questions |
+|---|---|
+| Persona | Who is affected? |
+| Journey | What is the user trying to accomplish? |
+| Contract | What inputs/outputs are expected? |
+| Dependencies | Which services, data, tools or rules are involved? |
+| Change surface | What changed and what consumes it? |
+| Failure modes | What could degrade silently? |
+| Evidence | What observation proves the behaviour is still correct? |
 
-An LLM-as-a-judge pattern can be valuable for evaluating outputs against a defined rubric, especially when correctness includes qualitative dimensions such as relevance, consistency, completeness, or adherence to a user journey. The rubric and evidence matter as much as the model.
+This turns implicit tribal knowledge into an inspectable engineering artifact.
 
-## The engineering lesson
+## Implementation pattern
 
-The difficult part is not generating more tests. It is making the **reasoning behind the tests explicit, inspectable, and repeatable**.
+A practical implementation can separate the system into four stages.
 
-That is the part of AI-assisted engineering that I find most interesting: using AI not simply to write code faster, but to make engineering knowledge easier to preserve, retrieve, validate, and share.
+### 1. Extract
 
-> Good regression automation protects behaviour. Good context engineering preserves the reasoning that tells you which behaviour matters.
+Parse source and configuration for routes, schemas, dependencies, business rules, feature flags, events, and other signals that describe system behaviour.
 
-## DevRel connection
+### 2. Normalize
 
-This is also a developer-experience problem. Engineers adopt systems faster when the system explains not only **what to do**, but **why it is structured that way**.
+Convert those signals into small, human-readable documents rather than one giant generated summary.
 
-That same principle applies to documentation, reference implementations, workshops, architecture content, and technical demos: reduce the amount of invisible context a developer has to reconstruct on their own.
+For example:
+
+```text
+knowledge/
+├── personas/
+├── journeys/
+├── contracts/
+├── dependencies/
+├── failure-modes/
+└── change-history/
+```
+
+Small artifacts are easier to review, diff, retrieve, and invalidate.
+
+### 3. Reason
+
+Use the knowledge artifacts to identify impacted scenarios and generate candidate regressions. This is where an LLM can help with semantic mapping across distributed context.
+
+### 4. Validate
+
+Keep deterministic assertions deterministic. Use model-based evaluation only where semantic judgement adds value, and retain the evidence used to make that judgement.
+
+## Blast radius is the real regression question
+
+A useful change-impact analysis asks:
+
+```text
+Changed component
+      ↓
+Direct consumers
+      ↓
+Shared contracts / state
+      ↓
+Dependent journeys
+      ↓
+User-visible behaviour
+```
+
+A small source-code change can still have a wide behavioural blast radius. Conversely, a large refactor may have a narrow one when contracts remain stable.
+
+## Where LLMs help
+
+LLMs are useful for tasks such as:
+
+- mapping a code change to affected concepts
+- finding relationships across documents and modules
+- generating candidate scenarios
+- comparing an output against a nuanced rubric
+- summarizing evidence for a human reviewer
+
+They should not silently replace deterministic checks or become the final authority without evidence.
+
+## A bounded LLM-as-a-judge design
+
+```text
+Candidate output
+      ↓
+Context + rubric + evidence
+      ↓
+Semantic evaluator
+      ↓
+Score + rationale + confidence
+      ↓
+Threshold
+  ↙       ↓       ↘
+pass   review    fail
+```
+
+The evaluator should know what it is judging, what evidence is allowed, and when the result is insufficient for automation.
+
+## What good looks like
+
+A strong regression system should make these questions easy to answer:
+
+1. What changed?
+2. Which journeys could be affected?
+3. Why were these scenarios selected?
+4. What evidence was observed?
+5. What remains uncertain?
+
+That is a much more useful outcome than a green test report with no explanation.
+
+> Good regression automation checks behaviour. Good context engineering preserves the reasoning behind the check.
