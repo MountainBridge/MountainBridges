@@ -55,9 +55,9 @@ The test strategy should follow the risk model rather than collecting arbitrary 
 
 ## Real-world reference case
 
-SWE-bench is useful precisely because it evaluates AI systems against real GitHub issues and repository-level changes rather than isolated coding questions. The authors note that many tasks require coordinating changes across multiple files and understanding long contexts—closer to real engineering work than single-function generation. citeturn609015search2
+SWE-bench evaluates AI systems against real GitHub issues and repository-level changes rather than isolated coding questions. Its tasks frequently require coordinated changes across multiple files and interaction with a real codebase, which is a useful model for testing systems in their actual operating environment.
 
-That suggests a broader testing rule: **evaluate the environment and task, not only the generated artifact.**
+Source: https://www.alphaxiv.org/abs/2310.06770
 
 ## Papers and further reading
 
