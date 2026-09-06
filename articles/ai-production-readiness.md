@@ -84,6 +84,29 @@ Source: https://www.alphaxiv.org/abs/2603.16975
 
 This is a useful portfolio-level lesson: as code generation becomes easier, the hard engineering work moves toward **defining the right problem, designing the system around uncertainty, and verifying behaviour**.
 
+## What changes when the system becomes an agent?
+
+An agent introduces iteration and tool use:
+
+```text
+Plan
+ ↓
+Inspect
+ ↓
+Act
+ ↓
+Observe
+ ↓
+Revise
+ ↺
+```
+
+That creates new architecture requirements: state, permissions, tool interfaces, stop conditions, rollback, observability and evidence.
+
+Recent research shows that the surrounding tool interface can materially change coding-agent behaviour even when the underlying model is unchanged. This makes tool design part of system design rather than an implementation detail.
+
+Source: https://www.alphaxiv.org/abs/2608.11386
+
 ## AI-specific failure modes
 
 AI systems add failure modes that can look successful:
@@ -94,18 +117,66 @@ AI systems add failure modes that can look successful:
 - inconsistent equivalent responses
 - hidden policy conflicts
 - evaluation drift after a model or prompt change
+- incomplete multi-file changes
+- failure to ask for missing information
 
 These are system failures even when infrastructure health looks normal.
 
+## Reference benchmark: engineering, not toy coding
+
+SWE-bench evaluates models on real GitHub issues and repository-level changes. Newer benchmarks such as SWE-Bench Pro deliberately emphasize long-horizon, multi-file tasks and human verification of requirements and evaluation environments.
+
+That points to a broader rule for production AI: **evaluate the system in the environment where the real work happens.**
+
+## Production architecture
+
+```text
+                  ┌───────────────────┐
+User request ────►│ Policy / contract  │
+                  └─────────┬─────────┘
+                            ↓
+                  ┌───────────────────┐
+                  │ Context assembly  │
+                  └─────────┬─────────┘
+                            ↓
+                  ┌───────────────────┐
+                  │ Model / reasoning │
+                  └─────────┬─────────┘
+                            ↓
+                  ┌───────────────────┐
+                  │ Tool / action gate│
+                  └─────────┬─────────┘
+                            ↓
+                  ┌───────────────────┐
+                  │ Verification      │
+                  └─────────┬─────────┘
+                            ↓
+                  ┌───────────────────┐
+                  │ Result + evidence │
+                  └─────────┬─────────┘
+                            ↓
+                       Feedback loop
+```
+
 ## Papers and further reading
 
-- [The State of Generative AI in Software Development — alphaXiv](https://www.alphaxiv.org/abs/2603.16975)
-- [Software engineering for AI/ML software: systematic literature review — alphaXiv](https://www.alphaxiv.org/abs/2011.03751)
-- [A Survey on LLM-as-a-Judge — alphaXiv](https://www.alphaxiv.org/abs/2411.15594)
-- [Retrieval Augmented Generation Evaluation — arXiv](https://arxiv.org/abs/2504.14891)
-- [Large Language Models are not Fair Evaluators — alphaXiv](https://www.alphaxiv.org/abs/2305.17926)
-- [SWE-bench — alphaXiv](https://www.alphaxiv.org/abs/2310.06770)
-- [SWE-agent — alphaXiv](https://www.alphaxiv.org/abs/2405.15793)
+### Agentic software engineering
+- [SWE-bench: Can Language Models Resolve Real-World GitHub Issues? — alphaXiv](https://www.alphaxiv.org/abs/2310.06770)
+- [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering — alphaXiv](https://www.alphaxiv.org/abs/2405.15793)
+- [SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks? — alphaXiv](https://www.alphaxiv.org/abs/2509.16941)
+- [Beyond Final Code: A Process-Oriented Error Analysis of Software Development Agents in Real-World GitHub Scenarios — alphaXiv](https://www.alphaxiv.org/abs/2503.12374)
+- [The Devil Is in the Interface: Evaluating How Tool Architecture Shapes Coding Agent Behavior — alphaXiv](https://www.alphaxiv.org/abs/2608.11386)
+- [Dialogue SWE-Bench: A Benchmark for Dialogue-Driven Coding Agents — alphaXiv](https://www.alphaxiv.org/abs/2606.13995)
+
+### Context and onboarding
+- [A Survey of Context Engineering for Large Language Models — alphaXiv](https://www.alphaxiv.org/abs/2507.13334)
+- [A Multi-agent Onboarding Assistant based on Large Language Models, Retrieval Augmented Generation, and Chain-of-Thought — alphaXiv](https://www.alphaxiv.org/abs/2503.23421)
+
+### Measuring actual impact
+- [How much does AI impact development speed? An enterprise-based randomized controlled trial — alphaXiv](https://www.alphaxiv.org/abs/2410.12944)
+- [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity — alphaXiv](https://www.alphaxiv.org/abs/2507.09089)
+- [Examining the Use and Impact of an AI Code Assistant on Developer Productivity and Experience in the Enterprise — alphaXiv](https://www.alphaxiv.org/abs/2412.06603)
+- [Intuition to Evidence: Measuring AI's True Impact on Developer Productivity — alphaXiv](https://www.alphaxiv.org/abs/2509.19708)
 
 ## Production readiness checklist
 
@@ -120,6 +191,7 @@ A serious AI system should have explicit answers for:
 - rollback strategy
 - human-review thresholds
 - monitoring and incident response
+- reproducible evidence for important decisions
 
 ## The principle
 
