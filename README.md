@@ -1,41 +1,46 @@
-# Nidhi Verma — Developer Relations | Technical Advocacy | AI & Architecture
+# Nidhi Verma — Engineering, AI & Technical Storytelling
 
-> 11+ years in software engineering, now focused on helping developers understand, adopt, and build with complex technology.
+> 11+ years of software engineering experience, with a focus on turning complex technical problems into systems people can understand, build, and trust.
 
-I am a Software Engineer 3 at JPMorganChase with a background in full-stack engineering and enterprise systems, and a growing focus on Generative AI, prompt engineering, context engineering, developer experience, and technical communication.
+I work across full-stack engineering, enterprise systems, Generative AI, prompt engineering, context engineering, evaluation, architecture, and developer experience.
 
-I am exploring senior roles across **Developer Relations, Developer Advocacy, Technical Evangelism, Developer Experience, and technical community building**.
+My portfolio is a collection of technical work and thinking built around one question: **how do we move from a messy real-world problem to something useful, reliable, explainable, and adoptable?**
 
-## What I bring
+## How I approach problems
 
-- **Engineering depth:** 11+ years building and evolving software across complex enterprise domains.
-- **Architecture & problem solving:** breaking ambiguous problems into systems, trade-offs, interfaces, workflows, and measurable outcomes.
-- **AI/LLM fluency:** prompt engineering, context engineering, LLM evaluation, regression automation, and AI-assisted engineering workflows.
-- **Developer empathy:** turning complex technical concepts into documentation, examples, talks, demos, and repeatable learning paths.
-- **Design thinking:** framing the real user problem before jumping to implementation.
-- **Builder mindset:** I prefer technical advocacy grounded in things I have actually built, tested, or reasoned through.
+**Problem → Users → Context → Constraints → Architecture → Implementation → Validation → Communication → Feedback**
 
-## Featured writing
+The technology changes. The reasoning pattern stays useful.
 
-### AI & engineering systems
+## Selected work
+
+### Solving complex problems
+- [From Ambiguity to Architecture](articles/ambiguity-to-architecture.md)
+- [Design Thinking for Engineers](articles/design-thinking-for-engineers.md)
+- [Failure Modes Before Features](articles/failure-modes-before-features.md)
+
+### AI, context & evaluation
 - [Context Engineering for Regression Automation](articles/context-engineering-regression-automation.md)
-- [LLM Evaluation Is a Systems Problem, Not Just a Prompt Problem](articles/llm-evaluation-systems.md)
+- [LLM Evaluation Is a Systems Problem](articles/llm-evaluation-systems.md)
+- [Making AI Systems Production-Ready](articles/ai-production-readiness.md)
 
-### Architecture & problem solving
-- [From Ambiguity to Architecture: A Practical Problem-Solving Framework](articles/ambiguity-to-architecture.md)
-- [Design Thinking for Engineers: Start With the Journey, Not the Technology](articles/design-thinking-for-engineers.md)
+### Building things developers can use
+- [Reference Implementations: From Demo to Usable System](articles/reference-implementations.md)
+- [Designing a Developer Journey End to End](articles/developer-journey-end-to-end.md)
+- [Architecture Decision Records That Survive the Original Team](articles/architecture-decisions-that-survive.md)
 
-## Portfolio philosophy
+## What you will find here
 
-This repository is intentionally more than a list of technologies. It is a record of **how I think**:
+- Architecture and system-design walkthroughs
+- Real-world problem framing and trade-offs
+- AI/LLM evaluation and context-engineering patterns
+- Reference implementations and implementation notes
+- Failure-mode analysis and validation strategies
+- Technical writing designed to teach the mental model, not just the syntax
 
-**Problem → Context → Users → Constraints → Architecture → Trade-offs → Validation → Communication → Adoption**
+## A note on examples
 
-That is the thread I bring to developer-facing engineering roles.
-
-## Current focus
-
-**Developer Relations · Developer Advocacy · Technical Evangelism · Developer Experience · AI Developer Experience · Generative AI · LLM Evaluation · Context Engineering · Architecture · Technical Content**
+Examples are intentionally generalized where the underlying engineering work involves proprietary systems or enterprise data. The goal is to preserve the problem-solving method, architecture reasoning, and lessons without exposing confidential implementation details.
 
 ## Connect
 
