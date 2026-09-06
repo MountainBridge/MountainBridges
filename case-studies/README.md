@@ -2,6 +2,10 @@
 
 These are the core portfolio artifacts. Each starts with a real engineering problem and models a realistic product or platform around it.
 
+## Personal front door
+
+The casebook supports a personal technical narrative rather than a title-driven pitch. Start with [Personal Positioning & 30/60/90 Pitches](../strategy/personal-pitch.md) to understand the story, then use the platform cases as evidence.
+
 ## Platform cases
 
 ### 01 — Information Fragments
@@ -111,6 +115,15 @@ Build realistic multi-file environments, evaluate multiple signals, handle adver
 **Reference:** HackerRank project-question and Orchestrate architectures.
 
 [Read the case](12-assessment-platform.md)
+
+### 13 — Event-Streaming Platform: Video, Live Events and Playback
+**Platform:** large-scale streaming / media platform
+
+Ingest playback events, process streams, maintain derived state, support replay and recommendation, and remain reliable during traffic spikes and live events.
+
+**Reference:** Netflix, YouTube and Prime Video engineering patterns.
+
+[Read the case](13-event-streaming-platform.md)
 
 ## Cross-platform pattern catalog
 
