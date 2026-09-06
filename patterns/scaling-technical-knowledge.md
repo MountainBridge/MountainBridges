@@ -1,10 +1,12 @@
 # Scaling Technical Knowledge
 
-A technical solution becomes more valuable when the next person can use it without needing the original expert in the room.
+> **30-second read:** Scaling a team is not just adding people. If every engineer must rediscover context, find the right path, or ask the original expert, the system has a knowledge bottleneck.
+
+> **2-minute read:** Convert expert knowledge into reusable paths: explain the problem, show the smallest working example, preserve important decisions, expose failure modes, and create a feedback loop. The aim is not “more documentation”; it is reducing the amount of expert intervention required for the next successful implementation without lowering the quality bar.
 
 ## The problem
 
-As systems and teams grow, the limiting factor is often not access to information but the cost of reconstructing context:
+As systems and teams grow, the limiting factor is often the cost of reconstructing context:
 
 - Where do I start?
 - Which path is supported?
@@ -51,41 +53,45 @@ A long document with no runnable path is a reference. A reference implementation
 
 When knowledge is expected to scale, contribution cannot depend on knowing the author personally.
 
-Useful mechanisms include:
-
-- a clear contribution path
-- examples of acceptable changes
-- lightweight review rules
-- templates for recurring artefacts
-- explicit ownership or maintenance expectations
-- visible feedback and change history
+Useful mechanisms include a clear contribution path, examples of acceptable changes, lightweight review rules, templates for recurring artefacts, explicit ownership, and visible feedback/change history.
 
 The objective is to lower the cost of the first useful contribution without lowering the quality bar.
 
+## Real-world reference cases
+
+**Spotify / Backstage:** central catalog, docs, templates and plugins turn fragmented infrastructure knowledge into a discoverable experience.
+
+**InnerSource:** reusable patterns and extension mechanisms show how contribution can scale without moving every change into one central team.
+
+**Google Cloud / Golden Paths:** opinionated paths provide a supported default while keeping the underlying platform and alternatives visible.
+
+These are external reference cases, not personal claims.
+
 ## Feedback is part of the architecture
 
-Do not measure only readership.
-
-Look for signals such as:
+Do not measure only readership. Look for signals such as:
 
 - where users abandon an onboarding path
 - which questions recur
 - which examples are copied or adapted
 - where support requests cluster
-- which versions or interfaces cause confusion
-- which contribution paths actually produce useful changes
+- which interfaces cause confusion
+- which contribution paths produce useful changes
 
 These signals turn usage into design input.
 
-## Avoid the central-expert bottleneck
+## Evidence behind the pattern
 
-A system that requires one expert to explain every architecture decision, demo every workflow and approve every small change does not scale.
+Research and practitioner work point in the same direction: developer experience is affected by flow, friction, cognitive load, communication and infrastructure support; onboarding benefits from task-based learning and supportive documentation; platform engineering uses self-service and golden paths to reduce recurring cognitive load.
 
-Better defaults move knowledge outward:
+Useful sources:
 
-**document → demonstrate → standardize → enable → observe → improve**
-
-This is the same reasoning behind golden paths, self-service platforms, reusable patterns and well-maintained contributor workflows.
+- [Developer Productivity for Humans — Google Research](https://research.google/pubs/developer-productivity-for-humans-a-human-centered-approach-to-developer-productivity/)
+- [Measuring Flow and Friction for Developers — Google Research](https://research.google/pubs/measuring-flow-and-friction-for-developers-part-6-measuring-flow-and-friction-for-developers/)
+- [Please Turn Your Cameras On: Remote Onboarding — alphaXiv](https://www.alphaxiv.org/abs/2011.08130)
+- [InnerSource Patterns](https://patterns.innersourcecommons.org/)
+- [Extensions for Sustainable Growth](https://patterns.innersourcecommons.org/p/extensions-for-sustainable-growth)
+- [Golden Paths for Engineering Execution Consistency — Google Cloud](https://cloud.google.com/blog/products/application-development/golden-paths-for-engineering-execution-consistency)
 
 ## Practical checklist
 
@@ -97,11 +103,7 @@ Before publishing a technical asset, ask:
 - Are important trade-offs explicit?
 - Are failure modes shown?
 - Can someone try the example without hidden context?
-- Is there a clear way to report confusion or improve the asset?
+- Is there a clear feedback path?
 - Can the asset evolve without relying on the original author?
 
-## Evidence behind the pattern
-
-This pattern is informed by research and practitioner work on developer experience, onboarding, platform engineering, and InnerSource. See [`research/evidence-base.md`](../research/evidence-base.md).
-
-In particular, InnerSource Patterns formalize reusable practices using problem, context, forces, solution and resulting context; research on onboarding highlights documentation, mentorship and task-based learning; recent platform-engineering literature emphasizes self-service and golden paths as mechanisms for reducing developer friction and scaling common workflows.
+> **Scale means the next engineer needs less expert intervention without receiving less useful engineering context.**
