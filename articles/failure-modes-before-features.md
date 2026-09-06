@@ -1,8 +1,10 @@
 # Failure Modes Before Features
 
-One of the simplest ways to improve a design is to ask what can go wrong before deciding what the feature should look like.
+> **30-second read:** A feature spec describes what should happen. Production is defined by what happens when dependencies time out, data is stale, requests repeat, or AI produces a convincing mistake. Design those failures before polishing the happy path.
 
-A feature description usually captures the happy path. Production teaches us that the unhappy path is where architecture earns its keep.
+> **2-minute read:** Build a failure map before selecting architecture. For each important journey, identify the failure, user impact, detection signal, recovery strategy, and ownership. Then let those risks drive queues, retries, idempotency, caching, circuit breakers, fallbacks, or human review. The architecture becomes a response to reality instead of a diagram of the happy path.
+
+One of the simplest ways to improve a design is to ask what can go wrong before deciding what the feature should look like.
 
 ## Start with failure
 
@@ -27,69 +29,44 @@ This turns vague risk into design inputs.
 | Duplicate request | repeated action | idempotency key | deduplicate |
 | Stale data | incorrect decision | freshness check | refresh / reject |
 | Partial failure | incomplete workflow | step-level status | resume / compensate |
+| AI unsupported answer | wrong decision | evidence check | reject / escalate |
 
-The exact implementation varies. The questions are portable.
-
-## Design the observable behaviour
+## Design observable behaviour
 
 A failure that is technically handled but invisible to the person operating the system is not fully handled.
 
-For meaningful failure paths, define:
-
 ```text
-Failure
-  ↓
-System response
-  ↓
-User-visible outcome
-  ↓
-Telemetry
-  ↓
-Operator action
+Failure → System response → User-visible outcome → Telemetry → Operator action
 ```
 
 Observability is part of the behaviour contract.
 
-## AI systems make this more important
+## AI makes “looks successful” failures more dangerous
 
-AI systems add failure modes that can look successful:
+AI systems add failure modes that can return HTTP 200 and still be wrong:
 
 - confident but unsupported output
 - irrelevant retrieved context
-- tool calls that complete but choose the wrong action
+- syntactically valid but semantically wrong tool calls
 - inconsistent responses for equivalent inputs
-- prompt or model changes that shift behaviour
+- model or prompt changes that shift behaviour
 
-A system can return HTTP 200 and still be wrong.
+The test strategy should follow the risk model rather than collecting arbitrary edge cases.
 
-## Use failure modes to shape tests
+## Real-world reference case
 
-A useful test set is not a random collection of edge cases. It is a reflection of the risk model.
+SWE-bench is useful precisely because it evaluates AI systems against real GitHub issues and repository-level changes rather than isolated coding questions. The authors note that many tasks require coordinating changes across multiple files and understanding long contexts—closer to real engineering work than single-function generation. citeturn609015search2
 
-```text
-Failure model
-     ↓
-Risk ranking
-     ↓
-Representative scenarios
-     ↓
-Deterministic / semantic checks
-     ↓
-Evidence
-```
+That suggests a broader testing rule: **evaluate the environment and task, not only the generated artifact.**
 
-This makes testing more intentional and helps explain why a scenario exists.
+## Papers and further reading
 
-## The design payoff
+- [SWE-bench: Can Language Models Resolve Real-World GitHub Issues? — alphaXiv](https://www.alphaxiv.org/abs/2310.06770)
+- [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering — alphaXiv](https://www.alphaxiv.org/abs/2405.15793)
+- [RepoCoder: Repository-Level Code Completion Through Iterative Retrieval and Generation — alphaXiv](https://www.alphaxiv.org/abs/2303.12570)
+- [Software engineering for AI/ML software: systematic literature review — alphaXiv](https://www.alphaxiv.org/abs/2011.03751)
+- [The State of Generative AI in Software Development — alphaXiv](https://www.alphaxiv.org/abs/2603.16975)
 
-When failure modes are explicit early, architecture decisions become easier:
+## The principle
 
-- queues become a response to timing and isolation needs
-- idempotency becomes a response to retries and duplicates
-- caching becomes a response to access patterns and latency
-- circuit breakers become a response to dependency failure
-- human review becomes a response to uncertainty
-
-The pattern is simple:
-
-> Do not design only for what the system should do. Design for the ways reality can make it behave differently.
+> **Do not design only for what the system should do. Design for the ways reality can make it behave differently.**
