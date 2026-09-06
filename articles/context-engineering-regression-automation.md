@@ -1,10 +1,8 @@
 # Context Engineering for Regression Automation
 
-Regression work often fails for a reason that has little to do with the test framework: the context required to make a good testing decision is distributed across source code, configurations, contracts, historical knowledge, and people's memory.
+> **30-second read:** Regression breaks down when the reasoning behind tests lives in people’s heads. Preserve codebase context as structured knowledge, map changes to affected journeys, then combine deterministic checks with bounded semantic evaluation.
 
-A change lands. A test suite runs. The team still has to answer a harder question: **what behaviour should we be worried about, and why?**
-
-The useful shift is to make that reasoning explicit enough for people and machines to reuse.
+> **2-minute read:** A code diff tells you what changed, not necessarily what behaviour could break. Build a context layer from source code, configuration, contracts, dependencies, failure modes and change history. Turn that context into small, reviewable artifacts—journeys, contracts, dependencies and risks. When code changes, use those artifacts to identify impacted scenarios and generate candidate regressions. Keep hard assertions deterministic; use an LLM for semantic mapping or judgement only where it adds value, and retain the evidence behind its decision. This turns regression from “run everything and inspect red tests” into a traceable change-impact system.
 
 ## The problem
 
@@ -14,9 +12,21 @@ Traditional regression automation is usually optimized around executable checks:
 change → run tests → pass/fail
 ```
 
-That works for deterministic behaviour. It becomes weaker when correctness depends on business journeys, dependencies, data shape, side effects, or interactions between services.
+That works well for deterministic behaviour. It becomes weaker when correctness depends on business journeys, dependencies, data shape, side effects, or interactions between services.
 
 The missing layer is context.
+
+## Why this is a research problem, not just a tooling problem
+
+Recent software-engineering research makes the limitation visible.
+
+SWE-bench frames evaluation around real GitHub issues and corresponding repository changes instead of isolated coding questions. SWE-agent shows that the tools and interfaces available to an agent materially affect how well it can navigate and modify a repository. citeturn240812search8turn449377search0
+
+A 2025 survey on context engineering describes retrieval, processing and management of contextual information as a broader discipline around RAG, memory, tools and multi-agent systems. citeturn848808search1
+
+A 2026 benchmark, CL4SE, goes further for software engineering by separating project-specific context, interpretable examples, procedural decision context and positive/negative context, then testing their effects on code generation, summarization, review and patch correctness. citeturn848808search3
+
+**Engineering implication:** context is not incidental input. It is part of the system under test.
 
 ## The model
 
@@ -38,7 +48,7 @@ Deterministic checks + semantic evaluation
       Evidence + review
 ```
 
-The point is not to generate more tests. It is to improve the quality of the decision about **which tests matter**.
+The point is not to generate more tests. It is to improve the decision about **which tests matter and why**.
 
 ## What context should survive a code change?
 
@@ -67,8 +77,6 @@ Parse source and configuration for routes, schemas, dependencies, business rules
 ### 2. Normalize
 
 Convert those signals into small, human-readable documents rather than one giant generated summary.
-
-For example:
 
 ```text
 knowledge/
@@ -108,19 +116,11 @@ User-visible behaviour
 
 A small source-code change can still have a wide behavioural blast radius. Conversely, a large refactor may have a narrow one when contracts remain stable.
 
-## Where LLMs help
+## A bounded judge, not an oracle
 
-LLMs are useful for tasks such as:
+LLM-as-a-judge research shows why semantic evaluation needs guardrails. Strong judges can agree with human preferences in some settings, but other work demonstrates substantial evaluator bias, including sensitivity to response ordering. citeturn240812search2turn240812search1
 
-- mapping a code change to affected concepts
-- finding relationships across documents and modules
-- generating candidate scenarios
-- comparing an output against a nuanced rubric
-- summarizing evidence for a human reviewer
-
-They should not silently replace deterministic checks or become the final authority without evidence.
-
-## A bounded LLM-as-a-judge design
+So the evaluator should receive:
 
 ```text
 Candidate output
@@ -138,6 +138,15 @@ pass   review    fail
 
 The evaluator should know what it is judging, what evidence is allowed, and when the result is insufficient for automation.
 
+## Failure modes worth making explicit
+
+- the right test exists, but the wrong scenario is selected
+- a dependency change affects a journey that no local test names
+- retrieved context is stale or incomplete
+- an LLM invents a plausible impact that is not supported by repository evidence
+- a model or prompt change shifts semantic behaviour without changing application code
+- a regression signal is technically red but does not identify the affected user journey
+
 ## What good looks like
 
 A strong regression system should make these questions easy to answer:
@@ -151,3 +160,14 @@ A strong regression system should make these questions easy to answer:
 That is a much more useful outcome than a green test report with no explanation.
 
 > Good regression automation checks behaviour. Good context engineering preserves the reasoning behind the check.
+
+## Papers & further reading
+
+- [A Survey of Context Engineering for Large Language Models — alphaXiv](https://www.alphaxiv.org/abs/2507.13334)
+- [CL4SE: Benchmarking Context Learning on Software Engineering — alphaXiv](https://www.alphaxiv.org/abs/2602.23047)
+- [Code Digital Twin: A Knowledge Infrastructure for AI-Assisted Complex Software Development — alphaXiv](https://www.alphaxiv.org/abs/2503.07967)
+- [SWE-bench: Can Language Models Resolve Real-World GitHub Issues? — alphaXiv](https://www.alphaxiv.org/abs/2310.06770)
+- [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering — alphaXiv](https://www.alphaxiv.org/abs/2405.15793)
+- [Agentless: Demystifying LLM-based Software Engineering Agents — alphaXiv](https://www.alphaxiv.org/abs/2407.01489)
+- [A Survey on LLM-as-a-Judge — alphaXiv](https://www.alphaxiv.org/abs/2411.15594)
+- [Large Language Models are not Fair Evaluators — alphaXiv](https://www.alphaxiv.org/abs/2305.17926)
