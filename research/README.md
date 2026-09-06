@@ -1,8 +1,10 @@
-# Research & Reference Layer
+# Research & Evidence Layer
 
-This directory is the evidence layer for the portfolio.
+This directory supports the engineering casebook with a curated evidence base.
 
-The goal is to keep **source → principle → pattern → implementation → measurement** traceable.
+The goal is traceability:
+
+**source → principle → pattern → architecture → implementation → measurement → feedback**
 
 ```mermaid
 flowchart LR
@@ -16,35 +18,26 @@ flowchart LR
     H --> B
 ```
 
-## Evidence base
+## Start here
 
-See [`evidence-base.md`](evidence-base.md) for the curated bibliography and practical takeaways.
+- [Evidence Base + Bibliography](evidence-base.md)
+- [Engineering Casebook](../case-studies/README.md)
+- [Quick-Grasp Diagrams](../diagrams/casebook-model.md)
 
-## Selection rules
+## What makes a source useful
 
-Prefer primary research, systematic or multivocal reviews, original engineering reports, and mature practitioner patterns. For fast-moving areas such as AI-assisted engineering and LLM evaluation, prefer recent surveys plus the strongest available primary sources.
+A source belongs here when it changes a design, implementation, documentation, measurement or adoption decision.
 
-Avoid link dumps. A source belongs here when it changes a design, implementation, documentation, measurement or adoption decision.
+Prefer primary research, systematic or multivocal reviews, original engineering reports, official technical documentation and mature practitioner patterns. For fast-moving areas such as AI-assisted engineering and LLM evaluation, prefer recent surveys together with strong first-party or primary sources.
+
+The repository deliberately avoids link dumps. Each source records the problem it helps explain, the mechanism worth borrowing, and where that evidence appears in the casebook.
 
 ## Research threads
 
-### Developer experience
-Flow, friction, cognitive load, feedback, developer goals, code quality and infrastructure support.
-
-### Onboarding and knowledge transfer
-Task-based onboarding, mentorship, documentation structure, collaborative tooling and cognitive-load reduction.
-
-### Reusable systems and participation
-Patterns, contribution paths, self-service, governance, maintenance and feedback loops.
-
-### Architecture and alignment
-Architecture decision records, alternatives, consequences, distributed decision-making and evolutionary architecture.
-
-### Golden paths and platforms
-Opinionated supported paths, discoverability, self-service, templates, automated delivery and transparent abstractions.
-
-### AI-assisted engineering
-AI as an amplifier of the surrounding engineering system; context, version control, data access, quality controls and feedback loops.
-
-### LLM / RAG evaluation
-Rubrics, calibration, judge reliability, retrieval quality, generation quality, faithfulness, safety and system-level evaluation.
+- Developer flow, friction, cognitive load and productivity
+- Onboarding and knowledge transfer
+- Reusable patterns, contribution and maintenance
+- Architecture decisions and distributed alignment
+- Golden paths, platform engineering and self-service
+- AI-assisted engineering and organizational capability
+- LLM / RAG evaluation, reliability and safety
