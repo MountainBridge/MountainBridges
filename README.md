@@ -1,72 +1,129 @@
 # Nidhi Verma — Engineering Casebook
 
-Senior engineering work is rarely about knowing one more framework. It is about taking an ambiguous problem, finding the real constraints, choosing a workable system boundary, and making the solution understandable enough that other engineers can use and extend it.
+I use software engineering, architecture, and AI to work through complex product and platform problems.
 
-This repository is a casebook of that kind of thinking.
+This casebook is organized around **real systems and the decisions they force**—not around technology names.
 
-## Start with a problem
+## Start with a platform problem
 
-| Problem | What to inspect | Reference case |
+| Platform | Problem | Case |
 |---|---|---|
-| Teams cannot find the right service, owner, API or documentation | [When the system becomes bigger than its documentation](case-studies/01-when-information-fragments.md) | Spotify / Backstage |
-| Standards exist, but every team implements them differently | [How to create a paved road without creating a prison](case-studies/02-golden-paths-without-lock-in.md) | Google Cloud / Spotify |
-| A platform grows through contributions and becomes inconsistent | [When contribution creates fragmentation](case-studies/03-platform-consistency-at-scale.md) | Shopify CLI |
-| An AI system produces fluent answers that may still be wrong | [Why AI evaluation is an end-to-end system](case-studies/04-ai-that-looks-right.md) | LLM/RAG evaluation research |
-| Regression knowledge lives in people and disappears between changes | [When regression becomes a knowledge problem](case-studies/05-regression-as-a-knowledge-system.md) | Generalized enterprise pattern |
+| Assessment / talent | How do you scale realistic technical challenges without losing quality, integrity or trustworthy evaluation? | [Challenge-quality system](case-studies/06-building-a-challenge-quality-system.md) |
+| Banking | How do payments, fraud, loans, ledger state and reconciliation remain consistent under failure? | [Banking platform](case-studies/07-banking-platform.md) |
+| Retail | How do search, inventory, checkout and recommendations stay fast and trustworthy? | [Retail platform](case-studies/08-retail-platform.md) |
+| Operations | How do you dispatch work when people, jobs and constraints change continuously? | [Operations platform](case-studies/09-operations-platform.md) |
+| Music | How do you personalize discovery without creating cold-start and feedback-loop failures? | [Music platform](case-studies/10-music-platform.md) |
+| Medical | How do you combine interoperability, privacy, evidence and AI without hiding uncertainty? | [Medical platform](case-studies/11-medical-platform.md) |
+| Media / streaming | How do you process playback and product events at scale without coupling every downstream consumer to the customer path? | [Event-streaming platform](case-studies/14-event-streaming-platform.md) |
+| Engineering platform | How do teams discover services, ownership and supported ways to build? | [Information fragments](case-studies/01-when-information-fragments.md) |
 
-## The reasoning pattern
+## The case-study format
+
+Every flagship case uses the same layered reading model:
+
+> **30-second read** → sharp takeaway
+>
+> **2-minute read** → mental model + why it matters
+>
+> **Deep dive** → architecture + technology choices + trade-offs + failure modes + validation + research
+
+The goal is to make complex engineering understandable without flattening the complexity.
+
+## The engineering loop
 
 ```mermaid
 flowchart LR
     A[Real-world problem] --> B[Users + journeys]
     B --> C[Context + constraints]
-    C --> D[System boundaries]
+    C --> D[State + boundaries]
     D --> E[Options + trade-offs]
     E --> F[Architecture]
     F --> G[Implementation]
-    G --> H[Validation]
-    H --> I[Explain + document]
-    I --> J[Feedback + reuse]
-    J --> C
+    G --> H[Failure injection]
+    H --> I[Validation + evidence]
+    I --> J[Explain + teach]
+    J --> K[Feedback + reuse]
+    K --> C
 ```
 
-The articles go deeper on the individual moves: [ambiguity → architecture](articles/ambiguity-to-architecture.md), [failure modes](articles/failure-modes-before-features.md), [architecture decisions](articles/architecture-decisions-that-survive.md), and [design thinking](articles/design-thinking-for-engineers.md).
+## Cross-platform problem patterns
+
+The domain changes. The underlying engineering problems repeat.
+
+Examples:
+
+- duplicate payment → **idempotency**
+- duplicate checkout → **idempotency**
+- duplicate event delivery → **idempotent consumer**
+- changing dispatch state → **state machine + re-planning**
+- stale inventory/search → **source of truth + derived read model**
+- AI decision under uncertainty → **policy boundary + evidence + evaluation**
+- growing engineering complexity → **golden path + self-service + discoverability**
+- recommendation degradation → **feedback-loop monitoring + multi-objective evaluation**
+
+See the [Platform Problem Pattern Catalog](case-studies/13-platform-pattern-catalog.md).
 
 ## AI systems
 
-The AI material follows the same engineering discipline rather than treating model output as the product:
+AI is treated as an engineering component—not the entire solution.
 
 - [Context Engineering for Regression Automation](articles/context-engineering-regression-automation.md)
 - [LLM Evaluation Is a Systems Problem](articles/llm-evaluation-systems.md)
 - [Making AI Systems Production-Ready](articles/ai-production-readiness.md)
 
-## Reusable engineering
+## Evidence
 
-A solution becomes more valuable when the next engineer can understand it, run it, challenge it, and improve it without needing the original expert in the room.
+Each case distinguishes:
 
-- [Reference Implementations](articles/reference-implementations.md)
-- [Designing a Developer Journey End to End](articles/developer-journey-end-to-end.md)
-- [Scaling Technical Knowledge](patterns/scaling-technical-knowledge.md)
+1. **Portfolio design** — the system being proposed or implemented as a reference architecture.
+2. **Real-world reference case** — an external system used to learn from.
+3. **Research evidence** — papers, empirical studies, benchmarks, and first-party engineering documentation.
 
-## Evidence layer
+See [Research & Evidence](research/evidence-base.md).
 
-The case studies separate three things explicitly:
+## Actual projects
 
-1. **Portfolio pattern** — a generalized engineering pattern or reasoning model.
-2. **Reference case** — a public example from another engineering organization.
-3. **Evidence** — research, standards, technical reports, or primary documentation supporting the conclusion.
+The older public repositories are not discarded. They are being audited and connected to the casebook where they contain useful engineering evidence.
 
-See [Research & Evidence](research/evidence-base.md) and [casebook diagrams](diagrams/casebook-model.md).
+See [Project Technology Inventory](engineering/project-inventory.md) for verified technologies, what each repository can demonstrate, and where a deeper source audit is still required.
 
-## Why this structure
+The standard for a flagship project is:
 
-The goal is not to collect technology names. The goal is to show how complex engineering problems can be reduced to clear decisions, useful abstractions, runnable examples, and feedback loops.
+**what we use → what it owns → why we use it → alternative → failure mode → production considerations**
 
-Where original work involves proprietary systems or enterprise data, examples are intentionally generalized. External organizations are clearly identified as reference cases, not personal claims.
+## Market-fit strategy
 
-## Selected engineering history
+The same engineering body of work can be surfaced differently depending on the company and role. The portfolio should remain broad, while the landing path changes around the problem the company cares about.
 
-Earlier public repositories provide implementation evidence across Angular, React, Node.js, micro-frontends, APIs, authentication, and data structures. They are intentionally treated as supporting evidence rather than the main narrative.
+See [Role Fit & Pitch Strategy](market/role-fit-and-pitch-strategy.md).
+
+## Build standard
+
+A case is not considered complete because it has a diagram.
+
+The eventual standard is:
+
+```text
+real problem
+  ↓
+reference application
+  ↓
+architecture
+  ↓
+working vertical slice
+  ↓
+deliberate failure cases
+  ↓
+observability
+  ↓
+evaluation
+  ↓
+technical explanation
+  ↓
+reusable pattern
+```
+
+Where original enterprise work is proprietary, examples are explicitly generalized. External systems are clearly labeled as references, never as personal claims.
 
 ## Connect
 
