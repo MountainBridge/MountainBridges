@@ -2,10 +2,6 @@
 
 These are the core portfolio artifacts. Each starts with a real engineering problem and models a realistic product or platform around it.
 
-## Personal front door
-
-The casebook supports a personal technical narrative rather than a title-driven pitch. Start with [Personal Positioning & 30/60/90 Pitches](../strategy/personal-pitch.md) to understand the story, then use the platform cases as evidence.
-
 ## Platform cases
 
 ### 01 — Information Fragments
@@ -125,17 +121,35 @@ Ingest playback events, process streams, maintain derived state, support replay 
 
 [Read the case](13-event-streaming-platform.md)
 
-## Cross-platform pattern catalog
+## Cross-platform problem catalog
 
 [Read the Platform Problem Pattern Catalog](13-platform-pattern-catalog.md)
 
-The goal is to accumulate reusable strategies across domains rather than write isolated essays. A new case should map back to the same underlying problem patterns wherever possible.
-
 ## Case-study template
 
-Every case should make these dimensions visible:
+Every case should make the same decision surface visible:
 
-**Problem → users → context → constraints → why obvious approaches fail → state model → architecture → technology choices → implementation pattern → trade-offs → failure modes → validation → measurement → reusable lesson**
+**Problem → users → scenario → stakes → business outcome → constraints → budget / cost model → obvious options → why they fail → state model → architecture → technology choices → implementation → failure modes → validation → measurement → real-world market references → reusable lesson**
+
+The audience is intentionally broader than engineers alone. A good case should let:
+
+- **Developers** see how the system works and what to build.
+- **Product** see user journeys, trade-offs, adoption/friction and what the system enables.
+- **Business** see value, risk, cost, operational exposure and what changes at different scales.
+
+### Stakes and budget are part of the architecture
+
+For every major idea, document:
+
+| Dimension | Questions |
+|---|---|
+| Stakes | What happens when this is wrong? Low, medium or high consequence? |
+| Cost | Compute, storage, network, third-party API/model, operational and engineering cost? |
+| Trade-off | What do we buy with the added complexity or spend? |
+| Scale break | At what traffic, data volume, latency, failure rate or business value does the cheaper design stop making sense? |
+| Control | What must be deterministic, audited, reversible or human-reviewed? |
+
+Do not invent precise financial figures where public evidence is unavailable. Use relative cost bands, explicit assumptions, sensitivity analysis, or public market benchmarks instead.
 
 ## Technology documentation standard
 
@@ -146,6 +160,7 @@ Each app/case must explicitly document:
 - why that technology is appropriate
 - what alternative was rejected
 - what failure mode it protects against
+- what the operational and cost implications are
 - what changes for production
 
 ## Evidence standard
