@@ -81,7 +81,32 @@ Some older repositories have incomplete or generic READMEs. In those cases, the 
 
 ---
 
-## 04 — Other public implementation repositories
+## 04 — Data Platform Lab: Kafka + SQL + MongoDB
+
+**Repository:** `projects/data-platform-lab/`
+
+**Problem / role in the portfolio:** one end-to-end order flow used to compare transactional state, event streaming and document-oriented read models.
+
+```text
+SQL source of truth
+        |
+        +---- event publication ----> Kafka
+                                      |
+                                      +--> consumers
+                                      |
+                                      v
+                               MongoDB read model
+```
+
+The lab deliberately includes failure exercises: duplicate delivery, consumer lag, replay, ordering, poison messages and the SQL-commit/Kafka-publication failure window.
+
+**Browser execution:** SQL and MongoDB can be exercised directly in OneCompiler; Kafka needs a broker-backed environment such as Killercoda, Confluent Cloud or a full Codespaces setup.
+
+**Related patterns:** transactional boundaries, event-driven architecture, idempotency, replay, distributed state, read models, failure-first design.
+
+---
+
+## 05 — Other public implementation repositories
 
 The account also contains public repositories for React, Node.js, authentication, shopping flows, parking, games, data structures and other learning/implementation exercises.
 
