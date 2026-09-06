@@ -14,7 +14,7 @@ This casebook is organized around **real systems and the decisions they force**�
 | Operations | How do you dispatch work when people, jobs and constraints change continuously? | [Operations platform](case-studies/09-operations-platform.md) |
 | Music | How do you personalize discovery without creating cold-start and feedback-loop failures? | [Music platform](case-studies/10-music-platform.md) |
 | Medical | How do you combine interoperability, privacy, evidence and AI without hiding uncertainty? | [Medical platform](case-studies/11-medical-platform.md) |
-| Media / streaming | How do you process playback and product events at scale without coupling every downstream consumer to the customer path? | [Event-streaming platform](case-studies/14-event-streaming-platform.md) |
+| Media / streaming | How do you process playback and product events at scale without coupling every downstream consumer to the customer path? | [Event-streaming platform](case-studies/13-event-streaming-platform.md) |
 | Engineering platform | How do teams discover services, ownership and supported ways to build? | [Information fragments](case-studies/01-when-information-fragments.md) |
 
 ## The case-study format
@@ -90,12 +90,6 @@ See [Project Technology Inventory](engineering/project-inventory.md) for verifie
 The standard for a flagship project is:
 
 **what we use → what it owns → why we use it → alternative → failure mode → production considerations**
-
-## Market-fit strategy
-
-The same engineering body of work can be surfaced differently depending on the company and role. The portfolio should remain broad, while the landing path changes around the problem the company cares about.
-
-See [Role Fit & Pitch Strategy](market/role-fit-and-pitch-strategy.md).
 
 ## Build standard
 
