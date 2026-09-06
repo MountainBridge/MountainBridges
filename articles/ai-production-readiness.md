@@ -1,14 +1,22 @@
 # Making AI Systems Production-Ready
 
-A prototype answers: **can the model do this?**
+> **30-second read:** A prototype asks whether a model can produce an answer. Production asks when it may act, what context it may use, how the result is verified, and what happens when it is wrong.
 
-A production system has to answer a different set of questions: **when should it act, what context may it use, how do we know it is right, and what happens when it is wrong?**
+> **2-minute read:** Treat the model as one uncertain component inside a larger system. Put policy and validation before it, explicit context around it, controlled tool boundaries after it, and verification beside the output. Then evaluate model, prompt, retrieval, tools, and policies as one behavioural release surface. New research on software engineering with GenAI increasingly points toward specification quality, architectural reasoning, oversight, and governance becoming more important as routine coding becomes easier.
+
+## The production problem
+
+A production AI system has to answer:
+
+```text
+Should it act?
+What context may it use?
+What is the expected behaviour?
+How do we know it is right?
+What happens when it is wrong?
+```
 
 ## Start with the boundary
-
-The model should not own every decision.
-
-A safer architecture separates responsibilities:
 
 ```text
 User intent
@@ -26,70 +34,78 @@ Verification
 User-visible result
 ```
 
-This makes it easier to reason about where uncertainty is introduced.
+The model should not own every decision.
 
 ## Define the contract
-
-Before tuning prompts, define what the system promises.
 
 | Area | Questions |
 |---|---|
 | Inputs | What data is accepted? |
-| Context | What sources are authoritative? |
+| Context | Which sources are authoritative? |
 | Output | What must be true about the result? |
 | Actions | Which actions require approval? |
-| Failure | What must trigger refusal or review? |
-| Evidence | What can we inspect after execution? |
+| Failure | What triggers refusal, retry, or review? |
+| Evidence | What can be inspected after execution? |
 
 A strong contract constrains both the model and the surrounding software.
 
 ## Make uncertainty visible
-
-Not every model output deserves the same treatment.
-
-A simple policy can route results based on confidence and risk:
 
 ```text
 Model result
    ↓
 Risk + evidence assessment
    ├── low risk / strong evidence → continue
-   ├── ambiguous                → request clarification
+   ├── ambiguous → clarify
    └── high risk / weak evidence → human review
 ```
 
-The exact thresholds should be domain-specific. The pattern is to make uncertainty a first-class system state.
+The exact thresholds are domain-specific. The engineering pattern is to make uncertainty a first-class state rather than hiding it behind a confidence score.
 
-## Evaluate changes as system changes
+## Treat every AI change as a system change
 
-Changing a model version, retrieval strategy, prompt, tool schema, or context source can change behaviour even when application code is untouched.
+Changing any of these can change behaviour:
 
-That means the regression surface includes:
+- model version
+- prompt or system instruction
+- retrieval strategy
+- context source
+- tool schema
+- guardrail or policy
+- evaluation rubric
 
-- prompts and instructions
-- retrieved context
-- tool definitions
-- model versions
-- policies and guardrails
-- evaluation rubrics
-- downstream integrations
+The release unit is therefore **system behaviour**, not merely the application-code diff.
 
-The release unit is the behaviour of the system, not just the source-code diff.
+## Real-world research signal
 
-## Build observability around decisions
+A 2026 systematic literature review combined with a survey of software developers found reported GenAI impact strongest in routine design, implementation, testing and documentation work, while early planning and requirements work showed lower reported benefits. The authors argue that value is shifting toward specification quality, architectural reasoning, oversight and governance.
 
-Useful telemetry captures enough information to answer:
+Source: https://www.alphaxiv.org/abs/2603.16975
 
-```text
-What was requested?
-What context was supplied?
-What path was taken?
-What tools were called?
-What evidence was produced?
-Why was the result accepted or rejected?
-```
+This is a useful portfolio-level lesson: as code generation becomes easier, the hard engineering work moves toward **defining the right problem, designing the system around uncertainty, and verifying behaviour**.
 
-Sensitive data should be handled according to the system's security and privacy requirements; observability should improve diagnosability without becoming an uncontrolled copy of the underlying data.
+## AI-specific failure modes
+
+AI systems add failure modes that can look successful:
+
+- confident but unsupported output
+- irrelevant context
+- incorrect tool choice
+- inconsistent equivalent responses
+- hidden policy conflicts
+- evaluation drift after a model or prompt change
+
+These are system failures even when infrastructure health looks normal.
+
+## Papers and further reading
+
+- [The State of Generative AI in Software Development — alphaXiv](https://www.alphaxiv.org/abs/2603.16975)
+- [Software engineering for AI/ML software: systematic literature review — alphaXiv](https://www.alphaxiv.org/abs/2011.03751)
+- [A Survey on LLM-as-a-Judge — alphaXiv](https://www.alphaxiv.org/abs/2411.15594)
+- [Retrieval Augmented Generation Evaluation — arXiv](https://arxiv.org/abs/2504.14891)
+- [Large Language Models are not Fair Evaluators — alphaXiv](https://www.alphaxiv.org/abs/2305.17926)
+- [SWE-bench — alphaXiv](https://www.alphaxiv.org/abs/2310.06770)
+- [SWE-agent — alphaXiv](https://www.alphaxiv.org/abs/2405.15793)
 
 ## Production readiness checklist
 
@@ -107,6 +123,4 @@ A serious AI system should have explicit answers for:
 
 ## The principle
 
-AI becomes an engineering problem when it crosses into production.
-
-The solution is not to remove uncertainty. It is to **bound it, measure it, expose it, and design the surrounding system so one uncertain component cannot silently become a system-wide failure**.
+> **AI becomes an engineering problem when it crosses into production. Bound uncertainty, measure it, expose it, and prevent one uncertain component from silently becoming a system-wide failure.**
