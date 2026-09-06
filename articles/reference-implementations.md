@@ -1,12 +1,12 @@
 # Reference Implementations: From Demo to Usable System
 
-A demo proves that technology can work. A reference implementation should help someone else make it work.
+> **30-second read:** A demo proves that technology can work. A reference implementation proves that another engineer can understand it, run it, modify it, hit a failure, and know what changes before production.
 
-That difference changes how I build examples.
+> **2-minute read:** Start with a real task, not an API feature. Keep the architecture small but honest, show one meaningful failure path, make the code explain the design, and document what was intentionally simplified. The best example is a transferable engineering decision—not a polished toy.
 
 ## Start with a real task
 
-Avoid building a feature because the API makes it easy to demonstrate. Start with a representative developer problem:
+Avoid building a feature because the API makes it easy to demonstrate. Start with a representative problem:
 
 ```text
 Real task
@@ -21,8 +21,6 @@ Failure paths
   ↓
 Operational notes
 ```
-
-The example should resemble the decisions a developer will actually face.
 
 ## Keep the architecture small, but honest
 
@@ -50,13 +48,11 @@ src/
 └── tests/        # expected behaviour
 ```
 
-Names, interfaces, and comments should explain intent rather than narrate syntax.
+Names, interfaces, tests, and comments should explain intent rather than narrate syntax.
 
 ## Include the edge case
 
 A demo that only shows the happy path teaches the least important part.
-
-At minimum, show one meaningful failure:
 
 ```text
 valid request ──→ expected result
@@ -68,13 +64,9 @@ valid request ──→ expected result
              useful recovery
 ```
 
-This is where developers learn whether the architecture actually has a coherent model.
-
 ## Explain what changes in production
 
 Every reference implementation should state what was simplified.
-
-For example:
 
 | Demo choice | Production concern |
 |---|---|
@@ -84,7 +76,17 @@ For example:
 | Static config | secret management |
 | Basic logs | metrics / tracing / alerting |
 
-This prevents a sample from being copied as if it were a production blueprint.
+## Real-world reference case: repository-scale AI
+
+SWE-bench changed the evaluation target from isolated code generation to real GitHub issues and repository changes. RepoCoder similarly frames code generation around information scattered across a repository rather than only the local file. These are useful reminders that a strong technical example should preserve the context surrounding the task, not just the final code snippet.
+
+## Papers and further reading
+
+- [SWE-bench — alphaXiv](https://www.alphaxiv.org/abs/2310.06770)
+- [SWE-agent — alphaXiv](https://www.alphaxiv.org/abs/2405.15793)
+- [RepoCoder — alphaXiv](https://www.alphaxiv.org/abs/2303.12570)
+- [CodeRAG — alphaXiv](https://www.alphaxiv.org/abs/2509.16112)
+- [R2C2-Coder — alphaXiv](https://www.alphaxiv.org/abs/2406.01359)
 
 ## The quality bar
 
@@ -96,4 +98,4 @@ A developer should be able to answer these questions after reading the repositor
 4. What happens when something goes wrong?
 5. What would I change before production?
 
-> A good reference implementation is not a prettier demo. It is a transferable engineering decision.
+> **A good reference implementation is not a prettier demo. It is a transferable engineering decision.**
