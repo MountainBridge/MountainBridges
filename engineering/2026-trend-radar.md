@@ -2,6 +2,8 @@
 
 This document keeps the casebook and companion repositories aligned with current engineering practice. It is a portfolio engineering standard, not a claim that every technology is required in production.
 
+**Source map:** [Engineering Bibliography](./bibliography.md)
+
 ## AI systems: current baseline
 
 For agentic/LLM projects, prefer demonstrating:
@@ -92,6 +94,8 @@ research signal
 ```
 
 Research discovery sources include alphaXiv, arXiv, Hugging Face Papers and primary engineering documentation. A paper is a signal for investigation, not evidence that a technique should automatically be adopted.
+
+The bibliography captures dated sources behind the current radar so articles can distinguish market signals, primary specifications and research evidence.
 
 ## Portfolio rule
 
