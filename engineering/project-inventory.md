@@ -6,35 +6,41 @@ This inventory distinguishes **verified repository evidence** from portfolio int
 
 | Repository | Verified technology / evidence | Strongest portfolio angle | Status |
 |---|---|---|---|
-| `Angular-kickstart` | Angular 7.2, TypeScript 3.2, RxJS 6.3, Angular Router, Express, Grunt/Sass, Jasmine/Karma/Protractor | enterprise frontend foundation, build/test tooling, developer setup | verified; modernization candidate |
-| `Basic-MFE` | Angular 11, TypeScript 4.1, Angular Architects Module Federation, Webpack 5, RxJS, Jasmine/Karma/Protractor | micro-frontends, module boundaries, independent delivery | verified; modernization candidate |
-| `Angular-sse` | Angular 10, RxJS 6.5, Angular Material/CDK, Flex Layout, Jasmine/Karma/Protractor | real-time UI / server-sent events / reactive client state | verified from manifest + README; architecture needs source audit |
-| `shopping-cart` | Angular CLI 11.2.2; starter README currently exposes Angular app setup/testing | retail UX, state management, checkout journey | stack partially verified; source audit required |
-| `devconnector` | Node.js, Express 4.18, MongoDB via Mongoose 6.8, JWT, bcryptjs, express-validator | API design, authentication, developer community domain model | verified; modernization candidate |
-| `Luna` | Unity project structure (`Assets`, `Library`, `Packages`, `ProjectSettings`, build outputs) | client application / game-like system, asset/runtime organization | verified structure; deeper code audit required |
-| `portfolio` | public repository exists; codebase present | portfolio delivery / web presentation | architecture and stack audit required |
-| `find-parking` | repository exists; source currently needs reconstruction for a trustworthy stack description | geolocation/search/optimization product | audit required |
-| `contentstack-nodejs` | public repository exists but currently exposes little readable implementation metadata | content/API integration | audit required |
-| `angular-node-authentication` | public repository exists but current default contents are empty/inaccessible | full-stack auth pattern | audit required; do not infer stack from name |
-| `angular12-nodejs` | public repository exists but current default contents are empty/inaccessible | Angular + Node integration | audit required; do not infer stack from name |
-| `DSA` | public repository exists | algorithms / coding foundation | audit required |
-| `rule.js` | public repository exists | JavaScript experimentation | audit required |
-| `rock-paper-scissor` | public repository exists | basic JS/browser application | not a flagship case |
-| `tic-tac-toe` | public repository exists | basic JS/browser application | not a flagship case |
-| `trainYourself1.1` | public repository exists | learning / experimentation | audit required |
-| `LandingPage_Prestige` | public repository exists but current contents are minimal | frontend presentation | not a flagship case unless expanded |
+| `Angular-kickstart` | Angular 7.2, TypeScript 3.2, RxJS 6.3, Angular Router, Express, Grunt/Sass, Jasmine/Karma/Protractor | enterprise frontend foundation, build/test tooling, developer setup | verified; modernization branch/PR |
+| `Basic-MFE` | Angular 11, TypeScript 4.1, Angular Architects Module Federation, Webpack 5, RxJS, Jasmine/Karma/Protractor | micro-frontends, module boundaries, independent delivery | verified; modernization branch/PR |
+| `Angular-sse` | Angular 10, RxJS 6.5, Angular Material/CDK, Flex Layout, Jasmine/Karma/Protractor | real-time UI / server-sent events / reactive client state | verified; modernization evidence added |
+| `shopping-cart` | Angular CLI 11.2.2; starter README exposes Angular app setup/testing | retail UX, state management, checkout journey | modernization evidence added |
+| `devconnector` | Node.js, Express 4.18, MongoDB via Mongoose 6.8, JWT, bcryptjs, express-validator | API design, authentication, developer community domain model | modernization branch/PR; secrets remediated from tracked config |
+| `Luna` | Unity project structure (`Assets`, `Library`, `Packages`, `ProjectSettings`, build outputs) | client application / game-like system, asset/runtime organization | evidence boundary branch/PR |
+| `portfolio` | public repository; codebase present | portfolio delivery / web presentation | evidence standard branch/PR |
+| `find-parking` | repository exists; source currently needs reconstruction for a trustworthy stack description | geolocation/search/optimization product | audit/reconstruction target |
+| `contentstack-nodejs` | public repository exists but currently exposes little readable implementation metadata | content/API integration | audit/reconstruction target |
+| `angular-node-authentication` | public repository exists but current default contents are empty/inaccessible | full-stack auth pattern | audit/reconstruction target; do not infer stack from name |
+| `angular12-nodejs` | public repository exists but current default contents are empty/inaccessible | Angular + Node integration | audit/reconstruction target; do not infer stack from name |
+| `DSA` | public repository exists | algorithms / coding foundation | README/evidence modernization added |
+| `rule.js` | public repository exists | JavaScript experimentation / rules engine | README/evidence modernization added |
+| `rock-paper-scissor` | Angular CLI 7.2.1 application | basic browser application / frontend fundamentals | README corrected and runnable paths added |
+| `tic-tac-toe` | public repository exists | basic browser application | README update still pending due GitHub SHA conflict |
+| `trainYourself1.1` | public repository exists | learning / experimentation | reconstruction target |
+| `LandingPage_Prestige` | public repository exists but current contents are minimal | frontend presentation | revival target |
 | `MountainBridges` | Markdown casebook, research, diagrams, platform case studies, 2026 trend radar | senior engineering reasoning + technical storytelling | flagship |
 
-## New flagship implementations to build
+## New flagship implementations
 
-These do not yet exist as separate public repositories in the connected account and should be created as dedicated runnable projects rather than implied as completed work:
+The four dedicated public repositories now exist and have working vertical slices on draft build branches:
 
-| Project | Purpose | Initial standard |
+| Project | Repository | Current evidence |
 |---|---|---|
-| Kafka event platform | demonstrate event-driven architecture | schema, partitioning, consumer groups, idempotency, retries/DLQ, lag/observability, failure injection |
-| SQL engineering lab | demonstrate relational modeling and production query thinking | PostgreSQL, migrations, constraints, transactions/isolation, indexes/query plans, concurrency, API + tests |
-| MongoDB engineering lab | demonstrate document modeling and access-pattern design | MongoDB, indexes, aggregation, pagination, validation, consistency trade-offs, API + tests |
-| AI evaluation / agent lab | demonstrate the portfolio's core AI engineering thesis | structured outputs, tools/MCP where appropriate, eval dataset, regression gate, traces, production-feedback loop |
+| Kafka event platform | `KafkaEventPlatform` | event schema validation, keyed producer, idempotent producer config, duplicate-safe consumer, Docker Compose, tests, CI |
+| SQL engineering lab | `PostgreSQLEngineeringLab` | PostgreSQL schema/invariants, atomic transfer transaction, indexes, Docker Compose, tests, CI |
+| MongoDB engineering lab | `MongoDBEngineeringLab` | order document model, compound indexes, cursor pagination, aggregation, Docker Compose, tests, CI |
+| AI evaluation / agent lab | `AIEvaluationAgentLab` | bounded agent, trace model, fixed eval dataset, tool-path evaluation, deterministic regression gate, tests, CI |
+
+Draft PRs:
+- `KafkaEventPlatform` → PR #1
+- `PostgreSQLEngineeringLab` → PR #1
+- `MongoDBEngineeringLab` → PR #1
+- `AIEvaluationAgentLab` → PR #1
 
 ## Historical-project modernization rule
 
