@@ -1,8 +1,30 @@
 # Banking Platform: Payments, Fraud, Loans, and the Consistency Problem
 
-> **30-second read:** A banking platform is not one transaction API. It is a set of tightly coupled workflows where money movement, risk, identity, ledger correctness, asynchronous processing, customer experience, and auditability must agree. The safest design separates concerns while preserving a traceable transaction state.
+> **30-second read:** A banking platform is not one transaction API. It is a set of tightly coupled workflows where money movement, risk, identity, ledger correctness, asynchronous processing, customer experience, and auditability must agree. The interesting engineering problem is what happens when they do not.
 
-> **2-minute read:** Imagine a platform handling card payments, account transfers, fraud checks, and personal-loan applications. A payment must be idempotent, authorized, fraud-scored, recorded in a reliable ledger, reconciled, and explainable after the fact. A loan application adds document ingestion, credit policy, model scoring, fairness controls, manual review, and lifecycle state. The common pattern is not “microservices”; it is explicit state machines, durable boundaries, immutable evidence, asynchronous work where latency allows, and deterministic controls around probabilistic decisions.
+> **2-minute read:** A customer presses **Pay**. The screen spins. The payment service has accepted the request, but the fraud check is slow and the downstream processor has not responded. The customer presses **Pay** again. Now we have a simple product interaction that has become a distributed-systems problem: did we create one payment or two, where is the authoritative state, what can safely be retried, and what should the customer see? Now imagine the same platform handling a loan application, where a document check, deterministic policy, a risk model, and a human reviewer may all contribute to one decision. The architecture has to make those states explicit, preserve evidence, and make failure recoverable rather than hiding it behind a successful-looking API response.
+
+## Start with a moment, not a service diagram
+
+Consider this reference journey.
+
+It is 9:07 AM. A customer initiates a $500 transfer. The request reaches the payment API and the transaction is accepted. Before the customer receives a response, the network times out.
+
+From the customer's perspective, nothing happened.
+
+So they tap **Pay** again.
+
+The second request reaches the system. If the API treats every request as a new command, the customer may now have two transfers. If the first transaction succeeded but its event was not published, downstream systems may not know what happened. If the fraud service is unavailable, should the payment wait, fail, or follow a defined fallback policy? And if an external settlement later disagrees with the internal record, who resolves the difference?
+
+None of these are edge cases that can be bolted on after the feature is built. They determine what the feature **is**.
+
+That leads to the central design question for this platform:
+
+> **What must remain true when the happy path breaks?**
+
+The answer drives the architecture: durable transaction state, idempotency, explicit workflow states, reliable event publication, reconciliation, observable failure, and an evidence trail for consequential decisions.
+
+This is a **portfolio reference architecture**, not a claim of production deployment in banking.
 
 ## Product to build
 
@@ -22,15 +44,22 @@ Operations console
    └── Reconcile settlement
 ```
 
-This is a **portfolio reference architecture**, not a claim of production deployment in banking.
+The platform is deliberately designed around the journeys and their failure modes rather than around a collection of microservices.
 
-## Core problem
+## The core problem: one journey, many truths
 
-The hardest requirement is consistency across systems that have different timing and failure characteristics.
+The payment example exposes the real difficulty. Different components can observe the same business event at different times and with different outcomes.
 
 A payment can be accepted by one system, delayed by another, rejected by a fraud engine, retried by a client, and later reconciled against an external settlement record. A loan decision may combine deterministic policy, statistical scoring, documents, and human review.
 
-The system therefore needs a source of truth for state and an evidence trail for every consequential transition.
+The system therefore needs:
+
+- a clear source of truth for business state
+- explicit states for work that is still pending
+- durable evidence for consequential transitions
+- controlled boundaries around probabilistic decisions
+- recovery paths for partial failure
+- reconciliation when internal and external records disagree
 
 ## Architecture
 
@@ -56,6 +85,8 @@ The system therefore needs a source of truth for state and an evidence trail for
                              ↓
                  Audit / reconciliation / analytics
 ```
+
+The service boundaries are a consequence of the workflow boundaries. For example, the ledger is not simply another database table: it is the financial source of truth. Risk is not the owner of authorization: it produces evidence that a policy layer can use. The event bus is not the source of payment truth: it distributes durable state changes to downstream consumers.
 
 ## Recommended stack and why
 
@@ -98,9 +129,13 @@ Final customer-visible state
 
 ### Why idempotency is first-class
 
+The 9:07 AM timeout is the reason this exists.
+
 Clients retry. Networks time out. Gateways repeat messages. A payment endpoint that creates a new transfer every time the caller retries is unsafe.
 
 The API should accept an idempotency key, persist the first resulting state, and return the same semantic result for safe retries.
+
+The important design question is not merely **“do we have Redis?”** It is **“what business operation does the idempotency record protect, how long does it remain authoritative, and what happens when the original request is still pending?”**
 
 ## Ledger boundary
 
@@ -118,6 +153,28 @@ Account A  ── debit ──→ Transaction ── credit ──→ Account B
 ```
 
 A derived balance can be optimized for reads, but the transaction history should remain reconstructable.
+
+This also gives operations a way to answer the uncomfortable question after a failure: **what actually happened?**
+
+## When the event doesn't leave the room
+
+Suppose the ledger transition succeeds and the process crashes before the payment event reaches Kafka.
+
+The customer-facing transaction exists. The downstream fraud, notification, analytics, or reconciliation consumer may know nothing about it.
+
+That is why the payment state change and its outgoing event need a reliable handoff, such as a transactional outbox:
+
+```text
+Database transaction
+   ├── payment state = AUTHORIZED
+   └── outbox event = PAYMENT_AUTHORIZED
+                    ↓
+              Event publisher
+                    ↓
+                  Kafka
+```
+
+Now recovery is a replay problem rather than a detective story.
 
 ## Fraud: rules + models + evidence
 
@@ -143,7 +200,9 @@ Keep the final action policy outside the model so a model error cannot silently 
 
 ## Loans: deterministic policy around probabilistic scoring
 
-A lending workflow should distinguish:
+Now take the same idea into lending.
+
+A customer submits a loan application. The system has documents, identity information, eligibility rules, credit features, a risk score, and potentially a human reviewer. A model can provide useful evidence, but the model should not become the invisible owner of the decision.
 
 ```text
 Eligibility rules
@@ -202,7 +261,7 @@ References:
 
 ## What maps back to the casebook
 
-[Failure Modes Before Features](failure-modes-before-features.md) explains why these failures should drive architecture.
+[Failure Modes Before Features](../articles/failure-modes-before-features.md) explains why failure scenarios should drive architecture.
 
 [Architecture Decisions That Survive](../articles/architecture-decisions-that-survive.md) captures the decision records for boundaries, consistency and failure handling.
 
@@ -217,6 +276,10 @@ References:
 Build the smallest vertical slice that can execute:
 
 **create payment → authorize → risk check → ledger transition → event → reconciliation → customer-visible status**
+
+Then deliberately break it:
+
+**timeout → retry → duplicate request → event-publish failure → recovery → reconciliation**
 
 Then add loan origination as a second vertical slice.
 
