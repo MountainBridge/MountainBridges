@@ -1,8 +1,8 @@
 # Nidhi Verma — Engineering Casebook
 
-I use software engineering, architecture, and AI to work through complex product and platform problems.
+"GOOD ENGINEERING STARTS BEFORE CODING"
 
-This casebook is organized around **real systems and the decisions they force**—not around technology names.
+I use software engineering, architecture, and AI to work through complex product and platform problems. This casebook is organized around **real systems and the decisions they force**—not around technology names.
 
 ## Start with a platform problem
 
