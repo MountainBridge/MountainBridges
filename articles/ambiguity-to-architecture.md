@@ -139,8 +139,45 @@ The reasoning should travel.
 
 ## Research & further reading
 
+### Problem framing, human-centered engineering and developer experience
+
+- [Developer Productivity for Humans — Google Research](https://research.google/pubs/developer-productivity-for-humans-a-human-centered-approach-to-developer-productivity/)
+- [Measuring Flow and Friction for Developers — Google Research](https://research.google/pubs/measuring-flow-and-friction-for-developers-part-6-measuring-flow-and-friction-for-developers/)
+- [What Improves Developer Productivity at Google? Code Quality — Google Research](https://research.google/pubs/what-improves-developer-productivity-at-google-code-quality/)
+- [Measuring Developer Goals — Google Research](https://research.google/pubs/measuring-developer-goals/)
+- [A Case Study of Onboarding in Software Teams: Tasks and Strategies — arXiv](https://arxiv.org/abs/2103.05055)
+
+### Architecture, decisions and infrastructure
+
 - [Architecture Decision Record — Martin Fowler](https://martinfowler.com/bliki/ArchitectureDecisionRecord.html)
 - [Scaling the Practice of Architecture, Conversationally — Martin Fowler](https://martinfowler.com/articles/scaling-architecture-conversationally.html)
-- [Building Infrastructure Platforms — Martin Fowler](https://www.martinfowler.com/articles/building-infrastructure-platform.html)
+- [Building Infrastructure Platforms — Martin Fowler / Thoughtworks](https://www.martinfowler.com/articles/building-infrastructure-platform.html)
+- [The Spotify Story — Backstage](https://backstage.io/docs/overview/background/)
+- [Announcing TechDocs — Backstage](https://backstage.io/blog/2020/09/08/announcing-tech-docs/)
+- [Golden Paths for Engineering Execution Consistency — Google Cloud](https://cloud.google.com/blog/products/application-development/golden-paths-for-engineering-execution-consistency)
+- [Platform Engineering — Google Cloud](https://cloud.google.com/solutions/platform-engineering)
+
+### AI-assisted software engineering and repository context
+
+- [State of AI-assisted Software Development 2025 — DORA / Google](https://dora.dev/research/2025/dora-report/)
+- [DORA AI Capabilities Model — DORA / Google Cloud](https://dora.dev/ai/capabilities-model/report/)
+- [The State of Generative AI in Software Development: Insights from Literature and a Developer Survey — arXiv](https://www.alphaxiv.org/abs/2603.16975)
 - [Code Digital Twin: A Knowledge Infrastructure for AI-Assisted Complex Software Development — alphaXiv](https://www.alphaxiv.org/abs/2503.07967)
 - [A Survey of Context Engineering for Large Language Models — alphaXiv](https://www.alphaxiv.org/abs/2507.13334)
+- [SWE-bench: Can Language Models Resolve Real-World GitHub Issues? — alphaXiv](https://www.alphaxiv.org/abs/2310.06770)
+- [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering — alphaXiv](https://www.alphaxiv.org/abs/2405.15793)
+- [RepoCoder: Repository-Level Code Completion Through Iterative Retrieval and Generation — alphaXiv](https://www.alphaxiv.org/abs/2303.12570)
+
+### Evaluation and evidence for AI systems
+
+- [A Survey on LLM-as-a-Judge — alphaXiv](https://www.alphaxiv.org/abs/2411.15594)
+- [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena — alphaXiv](https://www.alphaxiv.org/abs/2306.05685)
+- [Large Language Models are not Fair Evaluators — alphaXiv](https://www.alphaxiv.org/abs/2305.17926)
+- [Evaluation of Retrieval-Augmented Generation: A Survey — alphaXiv](https://www.alphaxiv.org/replicate/2405.07437)
+- [Retrieval Augmented Generation Evaluation in the Era of Large Language Models — arXiv](https://arxiv.org/abs/2504.14891)
+
+These references are the supporting evidence layer; the broader bibliography is maintained in the [Research & Evidence Base](../research/evidence-base.md).
+
+## The principle
+
+> **Start with the person. Make the problem visible. Make the trade-offs explicit. Design for failure. Build to learn.**
