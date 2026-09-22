@@ -1,8 +1,49 @@
 # Nidhi Verma — Engineering Casebook
 
-"GOOD ENGINEERING STARTS BEFORE CODING"
+> **GOOD ENGINEERING STARTS BEFORE CODING**
 
 I use software engineering, architecture, and AI to work through complex product and platform problems. This casebook is organized around **real systems and the decisions they force**—not around technology names.
+
+## Start here
+
+**Want the short version?** Follow **STOK.EED** for practical engineering, interview and market-readiness content.
+
+**Want the conversation?** Connect on [LinkedIn](https://www.linkedin.com/in/nidhiverma200/).
+
+**Want the proof?** Explore the engineering casebook and runnable projects in this GitHub organization.
+
+### The STOK.EED → LinkedIn → GitHub loop
+
+Every major idea is designed to travel across three layers:
+
+```text
+STOK.EED
+visual hook / practical lesson
+        ↓
+LinkedIn
+story / discussion / question
+        ↓
+GitHub
+case study / architecture / code / evidence
+        ↓
+STOK.EED
+visual recap / community question
+```
+
+STOK.EED is the **discovery and onboarding layer**. LinkedIn is the **conversation and professional context layer**. GitHub is the **proof and implementation layer**.
+
+The three should tell the **same story at different depths**, not publish unrelated content.
+
+## What STOK.EED helps engineers do
+
+- **Crack interviews** — coding, debugging, system design and engineering reasoning.
+- **Build real-world skills** — architecture, APIs, distributed systems, testing and AI engineering.
+- **Become market-ready** — portfolio, GitHub, technical communication and AI-era engineering skills.
+- **Learn from real problems** — not just technology definitions.
+
+The recurring journey is:
+
+**CRACK IT → BUILD IT → UNDERSTAND IT → SHOW IT → STAY MARKET-READY**
 
 ## Start with a platform problem
 
@@ -61,7 +102,7 @@ Examples:
 - growing engineering complexity → **golden path + self-service + discoverability**
 - recommendation degradation → **feedback-loop monitoring + multi-objective evaluation**
 
-See the [Platform Problem Pattern Catalog](case-studies/13-platform-pattern-catalog.md).
+See the [Platform Problem Pattern Catalog](case-studies/13-platform-problem-pattern-catalog.md).
 
 ## AI systems
 
@@ -119,6 +160,18 @@ reusable pattern
 
 Where original enterprise work is proprietary, examples are explicitly generalized. External systems are clearly labeled as references, never as personal claims.
 
+## Content operating system
+
+The public content system is documented in [STOK.EED ↔ LinkedIn ↔ GitHub Content System](distribution/stok-eed-linkedin-github.md).
+
+The rule is simple:
+
+**one engineering question → three depths → one source of truth.**
+
+No generic reposting. No disconnected AI tips. Every high-value post should point to a concrete problem, useful mental model, artifact, or experiment.
+
 ## Connect
 
-LinkedIn: https://www.linkedin.com/in/nidhiverma200/
+- **STOK.EED:** visual engineering + interview + market-readiness content
+- **LinkedIn:** https://www.linkedin.com/in/nidhiverma200/
+- **GitHub:** https://github.com/MountainBridge
