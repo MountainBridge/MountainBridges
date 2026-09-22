@@ -102,7 +102,7 @@ Examples:
 - growing engineering complexity → **golden path + self-service + discoverability**
 - recommendation degradation → **feedback-loop monitoring + multi-objective evaluation**
 
-See the [Platform Problem Pattern Catalog](case-studies/13-platform-problem-pattern-catalog.md).
+See the [Platform Problem Pattern Catalog](case-studies/13-platform-pattern-catalog.md).
 
 ## AI systems
 
