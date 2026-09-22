@@ -160,6 +160,10 @@ reusable pattern
 
 Where original enterprise work is proprietary, examples are explicitly generalized. External systems are clearly labeled as references, never as personal claims.
 
+## Working principles
+
+Communication, engineering reasoning, content-system and evidence standards are documented in [Working Instructions](docs/working-instructions.md).
+
 ## Content operating system
 
 The public content system is documented in [STOK.EED ↔ LinkedIn ↔ GitHub Content System](distribution/stok-eed-linkedin-github.md).
