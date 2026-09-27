@@ -7,9 +7,9 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nidhi%20Verma-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nidhiverma200/)
 [![GitHub](https://img.shields.io/badge/GitHub-MountainBridge-181717?style=flat&logo=github&logoColor=white)](https://github.com/MountainBridge)
 
-![Nidhi Verma — Developer Relations Engineering](assets/devrel-engineering-system.svg)
+![Nidhi Verma — Full-Stack Engineering × AI × Developer Relations](assets/devrel-engineering-system.svg)
 
-**Editable Canva visual:** [Open the Canva design](https://canva.link/n3g9c66gt1rk5y6)
+**Visual source:** [Open the editable Canva design](https://canva.link/rnb48x740wrktom)
 
 ## START HERE
 
@@ -72,22 +72,18 @@ Database behaviour, consistency, indexing, query design and failure-aware API pa
 ## The engineering → DevRel loop
 
 ```text
-Engineering question
-        ↓
-Build the working example
-        ↓
-Document the architecture
-        ↓
-Create the visual explanation
-        ↓
-Publish the tutorial
-        ↓
-Run the workshop / demo
-        ↓
-Collect developer feedback
-        ↓
-Improve the system + explanation
-        ↺
+BUILD
+  ↓
+EVALUATE
+  ↓
+EXPLAIN
+  ↓
+TEACH
+  ↓
+LEARN FROM DEVELOPERS
+  ↓
+IMPROVE
+  ↺
 ```
 
 The goal is not generic technical content.
