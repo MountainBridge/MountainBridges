@@ -1,120 +1,156 @@
-# Nidhi Verma — Full-Stack Engineering × AI × Developer Relations
+<div align="center">
 
-> **I build systems, investigate how they fail, and turn what I learn into things developers can use.**
+# Nidhi Verma
 
-11+ years of enterprise software engineering across **full-stack applications, distributed systems, AI engineering, quality engineering and developer experience**.
+### Full-Stack Engineering × AI × Developer Relations
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nidhi%20Verma-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nidhiverma200/)
-[![GitHub](https://img.shields.io/badge/GitHub-MountainBridge-181717?style=flat&logo=github&logoColor=white)](https://github.com/MountainBridge)
+**Build systems. Understand failure. Teach what you learn.**
+
+[LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [GitHub](https://github.com/MountainBridge)
+
+</div>
 
 ![Nidhi Verma — Full-Stack Engineering × AI × Developer Relations](assets/devrel-engineering-system.svg)
 
-**Visual source:** [Open the editable Canva design](https://canva.link/rnb48x740wrktom)
+<div align="center">
 
-## START HERE
+### BUILD → EVALUATE → EXPLAIN → TEACH → IMPROVE
 
-| BUILD | ENABLE | INFLUENCE |
-|---|---|---|
-| Full-stack engineering | Developer experience | Technical storytelling |
-| AI applications & agents | Documentation & tutorials | Architecture case studies |
-| Distributed systems | Workshops & demos | Community & feedback |
-| APIs, data & cloud | Reproducible labs | Engineering education |
+</div>
 
-## What I build
+---
 
-**AI Engineering**
-- AI applications, agents, RAG and MCP
-- Context engineering and tool use
-- AI evaluation, regression and LLM-as-a-judge
-- Evidence-driven agentic investigation
+## What I work on
 
-**Full-Stack & Distributed Systems**
-- React / TypeScript / Java / Spring Boot / Node
-- REST APIs, databases and cloud
-- Kafka and event-driven architecture
-- Streaming, retries, idempotency, DLQs and replay
-- Observability and failure-aware design
+<table>
+<tr>
+<td width="25%" valign="top">
 
-**Developer Experience**
-- Technical documentation
-- Developer tutorials and workshops
-- Runnable engineering labs
-- Architecture communication
-- Turning complex systems into learnable developer experiences
+### BUILD
+**Full-Stack**
 
-## Flagship work
+React · TypeScript  
+Java · Spring Boot  
+Node · REST APIs  
+Databases · Cloud
 
-### AI Evaluation & Agentic Engineering
-**[AIEvaluationAgentLab](https://github.com/MountainBridge/AIEvaluationAgentLab)** — private while implementation is being developed.
+</td>
+<td width="25%" valign="top">
 
-Exploring **ground-truth evaluation, deterministic checks, LLM-as-a-judge, traces, regression detection and evidence-driven agentic investigation**.
+### ENGINEER
+**AI Systems**
 
-### Regression Investigator
-Evidence-driven change-impact analysis for software changes.
+Agents · RAG  
+MCP · Context  
+Evaluation  
+Observability
 
-**Change → Context → User journeys → Blast radius → Evidence → Investigation → Human decision**
+</td>
+<td width="25%" valign="top">
 
-### Event-Driven Systems
-**[KafkaEventPlatform](https://github.com/MountainBridge/KafkaEventPlatform)**
+### SCALE
+**Distributed**
 
-Event contracts, partitioning, consumer groups, idempotency, retries/DLQ, replay and observable failure handling.
+Kafka · Events  
+Streaming  
+Retries · DLQ  
+Idempotency
 
-### Real-Time Systems
-**[Angular-sse](https://github.com/MountainBridge/Angular-sse)**
+</td>
+<td width="25%" valign="top">
 
-Browser streaming with deliberate failure scenarios: disconnects, duplicates, stale state, ordering, recovery and observability.
+### ENABLE
+**DevRel**
 
-### Data Engineering
-**[PostgreSQLEngineeringLab](https://github.com/MountainBridge/PostgreSQLEngineeringLab)** · **[MongoDBEngineeringLab](https://github.com/MountainBridge/MongoDBEngineeringLab)**
+Docs · Tutorials  
+Workshops  
+Developer Experience  
+Technical storytelling
 
-Database behaviour, consistency, indexing, query design and failure-aware API patterns.
+</td>
+</tr>
+</table>
 
-## The engineering → DevRel loop
+---
 
-```text
-BUILD
-  ↓
-EVALUATE
-  ↓
-EXPLAIN
-  ↓
-TEACH
-  ↓
-LEARN FROM DEVELOPERS
-  ↓
-IMPROVE
-  ↺
+## Featured engineering
+
+| Area | What you'll find |
+|---|---|
+| **AI Engineering** | Evaluation, agents, RAG, MCP, regression and evidence-driven investigation |
+| **Regression Investigator** | Change → context → user journeys → blast radius → evidence → human decision |
+| **Distributed Systems** | Kafka, event contracts, consumer behaviour, retries, replay and failure handling |
+| **Real-Time Systems** | Browser streaming, reconnection, ordering, stale state and observability |
+| **Data Engineering** | PostgreSQL, MongoDB, APIs, consistency and query behaviour |
+| **Developer Enablement** | Runnable labs, tutorials, architecture explanations and workshops |
+
+### Start here
+
+**[KafkaEventPlatform](https://github.com/MountainBridge/KafkaEventPlatform)**  
+Event-driven architecture, contracts, consumer groups, retries and DLQs.
+
+**[PostgreSQLEngineeringLab](https://github.com/MountainBridge/PostgreSQLEngineeringLab)**  
+Database behaviour, indexing, consistency and API patterns.
+
+**[MongoDBEngineeringLab](https://github.com/MountainBridge/MongoDBEngineeringLab)**  
+Document modelling, queries and application integration.
+
+**[Angular-sse](https://github.com/MountainBridge/Angular-sse)**  
+Real-time browser communication and failure-aware streaming.
+
+**[AIEvaluationAgentLab](https://github.com/MountainBridge/AIEvaluationAgentLab)**  
+Private research lab for AI evaluation and agentic regression investigation.
+
+---
+
+## The DevRel loop
+
+```
+        BUILD
+          ↓
+      EVALUATE
+          ↓
+       EXPLAIN
+          ↓
+        TEACH
+          ↓
+   LEARN FROM DEVELOPERS
+          ↓
+       IMPROVE
+          ↺
 ```
 
-The goal is not generic technical content.
+**Code becomes content.  
+Content becomes developer feedback.  
+Feedback improves the engineering.**
 
-Every serious artifact should answer:
+---
 
-**What problem are we solving?  
-Who experiences it?  
-What changed?  
-Why this architecture?  
-What can fail?  
-What evidence do we have?  
-What should another developer learn from it?**
+## How I think
 
-## Case-study standard
+> **Problem before technology.**  
+> **Evidence before conclusions.**  
+> **Failure modes before happy paths.**  
+> **Developer experience is part of the engineering.**
 
-**problem → context → architecture → working slice → failure → observability → evaluation → trade-offs → reusable pattern**
+Every serious case study follows:
 
-Where enterprise work is proprietary, examples are explicitly generalized. External products and reference architectures are clearly labelled.
+**problem → context → architecture → working slice → failure → evidence → trade-offs → reusable pattern**
 
-## Explore
+---
 
-**AI** · agents · evaluation · context engineering · regression  
-**Full-stack** · React · TypeScript · Java · APIs · databases  
-**Distributed systems** · Kafka · events · streaming · reliability  
-**DevRel** · documentation · tutorials · workshops · developer experience  
-**Architecture** · system design · trade-offs · failure modes · evidence
+## 11+ years of engineering
 
-## Connect
+Enterprise software engineering across **full-stack applications, banking workflows, distributed systems, quality engineering, AI evaluation and developer experience**.
 
-**LinkedIn:** https://www.linkedin.com/in/nidhiverma200/  
-**GitHub:** https://github.com/MountainBridge
+Where work is proprietary, examples are generalized rather than presented as public source code.
 
-> **Build it. Understand it. Explain it. Teach it. Improve it.**
+---
+
+<div align="center">
+
+### Build it. Understand it. Explain it. Teach it. Improve it.
+
+**[Connect on LinkedIn](https://www.linkedin.com/in/nidhiverma200/)**
+
+</div>
