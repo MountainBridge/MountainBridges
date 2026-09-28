@@ -10,7 +10,7 @@
 
 </div>
 
-![Nidhi Verma — Full-Stack Engineering × AI × Developer Relations](assets/devrel-engineering-system.svg)
+![Nidhi Verma — Full-Stack Engineering × AI × Developer Relations](assets/nidhi-devrel-home.jpg)
 
 <div align="center">
 
