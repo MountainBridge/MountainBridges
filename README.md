@@ -2,190 +2,136 @@
 
 # Nidhi Verma
 
-### Full-Stack Engineering × AI × Developer Relations
+### Full-Stack Engineering · AI Engineering · Developer Relations
 
-**Build systems. Understand failure. Explain what you learn. Enable developers.**
+**Build systems. Understand failure. Explain what you learn. Help developers build better.**
 
 [LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [GitHub](https://github.com/MountainBridge)
 
-</div>
-
-![Nidhi Verma — Full-Stack Engineering × AI × Developer Relations](assets/nidhi-devrel-home.jpg)
-
-<div align="center">
-
-### BUILD → EVALUATE → EXPLAIN → TEACH → IMPROVE
+<img src="assets/nidhi-devrel-home.jpg" alt="Nidhi Verma — Full-Stack Engineering × AI × Developer Relations" width="900" />
 
 </div>
-
-> **This is not a collection of toy projects.** It is an engineering casebook: production-inspired systems, failure modes, AI evaluation, developer experience, and the technical content needed to teach them.
 
 ---
 
-## The two projects I am building in public
+## What I build
+
+<table>
+<tr>
+<td align="center" width="20%"><b>FULL-STACK</b><br/><sub>React · TypeScript · Node · Java · APIs</sub></td>
+<td align="center" width="20%"><b>AI ENGINEERING</b><br/><sub>RAG · Agents · MCP · Evaluation</sub></td>
+<td align="center" width="20%"><b>RELIABILITY</b><br/><sub>Regression · Drift · Blast Radius</sub></td>
+<td align="center" width="20%"><b>ARCHITECTURE</b><br/><sub>Distributed Systems · Cloud · Events</sub></td>
+<td align="center" width="20%"><b>DEVREL</b><br/><sub>Tutorials · Workshops · DX</sub></td>
+</tr>
+</table>
+
+## The engineering loop
+
+```text
+BUILD → EVALUATE → EXPLAIN → TEACH → IMPROVE
+  ↑                                      ↓
+  └──────────── developer feedback ─────┘
+```
+
+I use production-inspired engineering problems as the starting point, then turn the solution into something another developer can inspect, run, understand and extend.
+
+---
+
+## Two flagship projects
 
 ### 01 · Agentic Regression Investigator
 
 **AI × Full-Stack × Quality Engineering × Developer Experience**
 
-A reference implementation for investigating the impact of software changes using grounded repository context, executable regression scenarios and evidence-driven analysis.
+A public reference implementation for investigating software-change impact using grounded repository context, executable scenarios and evidence-driven agents.
 
 ```text
 Code / Config Change
         ↓
-Repository Context
+Grounded Repository Context
         ↓
-Knowledge Model
+Knowledge Model + Documentation
         ↓
 Business + Technical Scenarios
         ↓
-Regression / Negative / Stress Tests
+Functional · Null · Negative · Stress Tests
         ↓
 Drift + Blast-Radius Detection
         ↓
 Agentic Investigation
         ↓
-Evidence + Human Decision
+Evidence Pack + Human Decision
 ```
 
-**What it demonstrates**
+**The idea:** regression should answer more than **“did the test pass?”** It should explain **what changed, what could be affected, what evidence supports the finding and what a human should investigate next.**
 
-- Context engineering and source-grounded knowledge
-- Business journey → technical scenario mapping
-- Playwright / API / contract-style regression
-- Null, negative and stress testing
-- Change impact and blast-radius analysis
-- Agentic investigation with evidence rather than unsupported conclusions
-- Plain-English reports for engineers and product stakeholders
-- CI/CD quality gates and deployment feedback
-- Observability and production-alert correlation
-
-**DevRel proof:** the project is designed as a runnable tutorial, architecture case study, workshop and reusable pattern — not just an internal engineering story.
-
-→ [`projects/01-agentic-regression-investigator.md`](projects/01-agentic-regression-investigator.md)
+[Read the case study →](projects/01-agentic-regression-investigator.md)
 
 ---
 
-### 02 · Production AI Application Engineering
+### 02 · Production AI Application
 
 **AI Application × RAG × Agents × MCP × Evaluation × Cloud**
 
-An end-to-end AI application that shows what it takes to move beyond a chatbot demo and build an application developers can actually understand, evaluate, operate and extend.
+An end-to-end AI application built to demonstrate the gap between a chatbot demo and an operable engineering system.
 
 ```text
-User
- ↓
-Web Application
- ↓
-API / Auth / Streaming
- ↓
-AI Orchestration
- ├── RAG
- ├── Tools / MCP
- └── Agent Workflow
- ↓
-Evaluation + Ground Truth
- ↓
-Observability + Safety
- ↓
-CI/CD + Deployment
+Web UI → API → AI Orchestration
+              ├─ RAG
+              ├─ Tools / MCP
+              └─ Agent Workflow
+                     ↓
+              Ground-Truth Evaluation
+                     ↓
+          Observability · Safety · CI/CD
 ```
 
-**What it demonstrates**
+The project will expose the implementation as tutorials, architecture notes, failure-mode labs and workshop material.
 
-- React + TypeScript full-stack experience
-- API and backend architecture
-- RAG and retrieval evaluation
-- Agent/tool orchestration
-- MCP-style tool integration
-- Streaming UX
-- Authentication and authorization
-- Ground-truth datasets and evaluation metrics
-- Regression tests for AI behaviour
-- Observability, cost and failure analysis
-- CI/CD and production-readiness practices
-
-**DevRel proof:** every architectural decision becomes a tutorial, runnable example, troubleshooting guide and workshop module.
-
-→ [`projects/02-production-ai-application.md`](projects/02-production-ai-application.md)
+[Read the project plan →](projects/02-production-ai-application.md)
 
 ---
 
-## Why these two projects
+## What makes this a DevRel portfolio
 
-Together they answer the two questions a senior engineering + DevRel interview should be able to answer:
-
-**Can you build a real system?**  
-Yes — full-stack application, APIs, AI orchestration, testing, distributed behaviour and deployment.
-
-**Can you help other developers build one?**  
-Yes — architecture, documentation, runnable examples, failure analysis, tutorials and workshops are part of the implementation.
-
-The goal is not to claim expertise through a long technology list. The goal is to make the engineering **inspectable, runnable and teachable**.
-
----
-
-## Engineering themes
-
-| Theme | Evidence I publish |
+| Engineering | Developer enablement |
 |---|---|
-| **Full-Stack** | React, TypeScript, Node.js, Java, APIs, databases, streaming |
-| **AI Engineering** | RAG, agents, MCP, evaluation, context engineering |
-| **Reliability** | Regression, negative testing, drift detection, blast radius, observability |
-| **Distributed Systems** | Kafka, events, retries, DLQs, idempotency, failure handling |
-| **Developer Experience** | Documentation, tutorials, workshops, examples, feedback loops |
-| **Architecture** | Trade-offs, failure modes, system boundaries and design decisions |
+| Full-stack applications | Runnable tutorials |
+| AI agents and evaluation | Architecture explainers |
+| Regression and reliability | Workshops |
+| Distributed systems | Troubleshooting guides |
+| Cloud and CI/CD | Developer journeys |
+| Failure analysis | Case studies + diagrams |
+
+Every major project follows:
+
+**Problem → Users → Context → Constraints → Architecture → Implementation → Failure → Validation → Communication → Feedback**
 
 ---
 
-## From engineering to developer enablement
+## Casebook
 
-```text
-BUILD
-  ↓
-UNDERSTAND THE FAILURE
-  ↓
-DOCUMENT THE DECISION
-  ↓
-CREATE A RUNNABLE EXAMPLE
-  ↓
-TEACH IT
-  ↓
-COLLECT DEVELOPER FEEDBACK
-  ↓
-IMPROVE THE SYSTEM
-  ↺
-```
+Production-inspired patterns, generalized so they can be shared without exposing employer source code, credentials, customer data or proprietary workflows.
 
-Every case study follows:
-
-**Problem → Users → Context → Constraints → Architecture → Implementation → Failure → Validation → Communication → Feedback → Scale**
+- **Context Engineering for Regression Automation** — repository context → living documentation → executable scenarios.
+- **Agentic Regression Investigation** — change impact investigation with evidence and human review.
+- **AI Evaluation Is a Systems Problem** — ground truth, regression, observability and failure analysis.
+- **From Ambiguity to Architecture** — turning unclear requirements into explicit system decisions.
+- **Failure Modes Before Features** — designing around what can fail, not only the happy path.
+- **Developer Journey End to End** — documentation, examples, tooling and feedback as one system.
 
 ---
 
-## Case studies
+## Learn with the projects
 
-The public casebook will cover production-inspired patterns without exposing proprietary JPMorganChase code, data or internal implementation details.
-
-- **Context Engineering for Regression Automation** — turning codebase context into living documentation and executable scenarios.
-- **Agentic Regression Investigation** — using agents to investigate change impact while keeping evidence and human review in the loop.
-- **AI Evaluation Is a Systems Problem** — ground truth, evaluation datasets, regression, observability and failure analysis.
-- **Spectrum Workflow** — how workflow complexity can be reduced through better system understanding, reusable patterns and developer enablement.
-- **From Ambiguity to Architecture** — design thinking applied to engineering decisions.
-- **Failure Modes Before Features** — designing systems around what can go wrong, not only the happy path.
-- **Developer Journey End to End** — documentation, examples, tooling and feedback as one developer experience.
-
----
-
-## Developer learning path
-
-The repository is intentionally becoming a learning system, not just a portfolio.
-
-**30-second read** → the idea  
+**30-second read** → idea  
 **2-minute read** → architecture + trade-offs  
 **10-minute lab** → runnable example  
 **Workshop** → build it with me  
 **Case study** → understand the engineering decision
+
+The objective is simple: **make senior engineering knowledge reproducible.**
 
 ---
 
@@ -193,14 +139,14 @@ The repository is intentionally becoming a learning system, not just a portfolio
 
 Enterprise software engineering across **full-stack applications, banking workflows, distributed systems, quality engineering, AI evaluation and developer experience**.
 
-Where work is proprietary, examples are generalized into public engineering patterns rather than presented as source code from an employer.
+Where the underlying work is proprietary, the public material focuses on generalized engineering patterns, synthetic examples and reusable learning artifacts.
 
 ---
 
 <div align="center">
 
-### Build it. Understand it. Explain it. Teach it. Improve it.
+### Build it. Understand it. Explain it. Teach it.
 
-**[Connect on LinkedIn](https://www.linkedin.com/in/nidhiverma200/)**
+[Connect on LinkedIn](https://www.linkedin.com/in/nidhiverma200/)
 
 </div>
