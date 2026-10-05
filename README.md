@@ -36,6 +36,22 @@ BUILD → EVALUATE → EXPLAIN → TEACH → IMPROVE
 
 ---
 
+## Start here
+
+### Featured article
+
+**[Regression Was a Context Problem →](articles/01-regression-was-a-context-problem.md)**
+
+A practical look at how grounded repository context can become living documentation, executable scenarios, regression evidence and agentic investigation.
+
+### Featured project
+
+**[Agentic Regression Investigator →](projects/01-agentic-regression-investigator.md)**
+
+A public synthetic reference implementation for change-impact investigation using context engineering, regression, drift detection and bounded AI agents.
+
+---
+
 ## Two flagship projects
 
 ### 01 · Agentic Regression Investigator
@@ -62,9 +78,7 @@ Agentic Investigation
 Evidence Pack + Human Decision
 ```
 
-**The question:** regression should answer more than **“did the test pass?”** It should explain **what changed, what could be affected, what evidence supports the finding and what a human should investigate next.**
-
-[Read the case study →](projects/01-agentic-regression-investigator.md)
+[Read the project →](projects/01-agentic-regression-investigator.md)
 
 ---
 
@@ -86,6 +100,24 @@ Web UI → API → AI Orchestration
 ```
 
 [Read the project plan →](projects/02-production-ai-application.md)
+
+---
+
+## The engineering lens
+
+I use **design thinking + system design + data structures & algorithms + real-world problem solving** as the foundation for the AI and DevEx work.
+
+The goal is not to collect technologies. It is to understand:
+
+- **Why does this problem exist?**
+- **Who experiences it?**
+- **What are the constraints and failure modes?**
+- **What architecture makes the trade-offs explicit?**
+- **What data structures and algorithms make the solution efficient?**
+- **How do we test and observe it?**
+- **How do we explain it so another developer can reproduce it?**
+
+This repository will increasingly connect those fundamentals to practical systems rather than isolated interview exercises.
 
 ---
 
