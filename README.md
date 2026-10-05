@@ -6,9 +6,9 @@
 
 **I build and teach systems that make AI-powered software reliable, testable and understandable.**
 
-[LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [GitHub](https://github.com/MountainBridge)
+<img src="assets/nidhi-devrel-home.svg" alt="Nidhi Verma — AI Engineering × Full-Stack Engineering × Developer Experience" width="100%" />
 
-<img src="assets/nidhi-devrel-home.jpg" alt="Nidhi Verma — AI Engineering × Full-Stack Engineering × Developer Experience" width="900" />
+[LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [MountainBridges](https://github.com/MountainBridge/MountainBridges)
 
 </div>
 
