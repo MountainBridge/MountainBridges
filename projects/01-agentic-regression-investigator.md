@@ -122,3 +122,7 @@ This project is deliberately built as developer education:
 A developer should be able to clone the project, run a small synthetic application, introduce a controlled change, execute the regression workflow and understand **why the investigator flagged the change**.
 
 That is the core DevRel test: the engineering is inspectable and the learning path is reproducible.
+
+## Read the companion article
+
+[Regression Was a Context Problem →](../articles/01-regression-was-a-context-problem.md)
