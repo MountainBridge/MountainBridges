@@ -1,182 +1,112 @@
-<div align="center">
+<table>
+<tr>
+<td width="58%" valign="middle">
 
 # Nidhi Verma
 
-### AI Engineering · Full-Stack Engineering · Developer Experience
+### AI Engineering · Full-Stack · Developer Experience
 
-**I build and teach systems that make AI-powered software reliable, testable and understandable.**
+**I build and teach reliable AI-powered software.**
 
-<img src="assets/nidhi-devrel-home.svg" alt="Nidhi Verma — AI Engineering × Full-Stack Engineering × Developer Experience" width="100%" />
-
-[LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [MountainBridges](https://github.com/MountainBridge/MountainBridges)
-
-</div>
-
----
-
-## What I build
-
-| AI ENGINEERING | FULL-STACK | RELIABILITY | ARCHITECTURE | DEVELOPER EXPERIENCE |
-|---|---|---|---|---|
-| Agents · RAG · MCP · Evaluation | React · TypeScript · Node · Java · APIs | Regression · Drift · Blast Radius | Distributed Systems · Cloud · Events | Docs · Tutorials · Workshops |
-
-## My engineering thesis
+11+ years of enterprise engineering across full-stack applications, distributed systems, quality engineering and AI evaluation.
 
 **From Context → Confidence**
 
-Modern software is increasingly built with AI, but developers still need a reliable way to understand what changed, test what matters, investigate failures and make decisions with evidence.
+[LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [Engineering Casebook](https://github.com/MountainBridge/MountainBridges)
 
-I explore that problem through production-inspired engineering systems, generalized so they can be shared publicly without exposing employer source code, credentials, customer data or proprietary workflows.
+</td>
 
-```text
-BUILD → EVALUATE → EXPLAIN → TEACH → IMPROVE
-  ↑                                      ↓
-  └──────────── developer feedback ─────┘
-```
+<td width="42%" valign="middle">
 
----
+<img src="assets/nidhi-devrel-home.svg" width="100%" alt="Nidhi Verma — AI Engineering, Full-Stack and Developer Experience" />
 
-## Start here
-
-### Featured article
-
-**[Regression Was a Context Problem →](articles/01-regression-was-a-context-problem.md)**
-
-A practical look at how grounded repository context can become living documentation, executable scenarios, regression evidence and agentic investigation.
-
-### Featured project
-
-**[Agentic Regression Investigator →](projects/01-agentic-regression-investigator.md)**
-
-A public synthetic reference implementation for change-impact investigation using context engineering, regression, drift detection and bounded AI agents.
+</td>
+</tr>
+</table>
 
 ---
 
-## Two flagship projects
+## What I am building
 
-### 01 · Agentic Regression Investigator
+<table>
+<tr>
+<td align="center" width="20%"><b>AI ENGINEERING</b><br/><sub>Agents · RAG · MCP · Evaluation</sub></td>
+<td align="center" width="20%"><b>FULL-STACK</b><br/><sub>React · TypeScript · Node · Java</sub></td>
+<td align="center" width="20%"><b>RELIABILITY</b><br/><sub>Regression · Drift · Evidence</sub></td>
+<td align="center" width="20%"><b>ARCHITECTURE</b><br/><sub>Distributed Systems · Cloud</sub></td>
+<td align="center" width="20%"><b>DEVEX</b><br/><sub>Docs · Tutorials · Workshops</sub></td>
+</tr>
+</table>
 
-**AI × Full-Stack × Reliability × Developer Experience**
+## The question I am exploring
 
-A public reference implementation for investigating software-change impact using grounded repository context, executable scenarios and evidence-driven agents.
+> **How do we make AI-powered software easier for developers to build, test, understand and trust?**
 
-```text
-Code / Config Change
-        ↓
-Grounded Repository Context
-        ↓
-Knowledge Model + Documentation
-        ↓
-Business + Technical Scenarios
-        ↓
-Functional · Null · Negative · Stress Tests
-        ↓
-Drift + Blast-Radius Detection
-        ↓
-Agentic Investigation
-        ↓
-Evidence Pack + Human Decision
-```
+My current answer is a continuous engineering loop:
 
-[Read the project →](projects/01-agentic-regression-investigator.md)
+**BUILD → EVALUATE → EXPLAIN → TEACH → IMPROVE**
+
+with **design thinking, system design, data structures & algorithms, failure-mode analysis and real-world constraints** underneath it.
 
 ---
 
-### 02 · Production AI Application
+## Featured work
 
-**AI Application × RAG × Agents × MCP × Evaluation × Cloud**
+### 01 — Agentic Regression Investigator
 
-An end-to-end AI application built to demonstrate the gap between a chatbot demo and an operable engineering system.
+A public synthetic reference implementation for answering more than **"did the test pass?"**
 
-```text
-Web UI → API → AI Orchestration
-              ├─ RAG
-              ├─ Tools / MCP
-              └─ Agent Workflow
-                     ↓
-              Ground-Truth Evaluation
-                     ↓
-          Observability · Safety · CI/CD
-```
+**Change → Context → Scenarios → Regression → Drift → Investigation → Evidence → Human Decision**
 
-[Read the project plan →](projects/02-production-ai-application.md)
+[Read the case study →](projects/01-agentic-regression-investigator.md)  
+[Read: Regression Was a Context Problem →](articles/01-regression-was-a-context-problem.md)
 
----
+### 02 — Production AI Application
 
-## The engineering lens
+A full-stack AI application that treats AI as a software system, not a chatbot demo.
 
-I use **design thinking + system design + data structures & algorithms + real-world problem solving** as the foundation for the AI and DevEx work.
+**React → API → RAG → Tools/MCP → Agents → Evaluation → Observability → CI/CD**
 
-The goal is not to collect technologies. It is to understand:
-
-- **Why does this problem exist?**
-- **Who experiences it?**
-- **What are the constraints and failure modes?**
-- **What architecture makes the trade-offs explicit?**
-- **What data structures and algorithms make the solution efficient?**
-- **How do we test and observe it?**
-- **How do we explain it so another developer can reproduce it?**
-
-This repository will increasingly connect those fundamentals to practical systems rather than isolated interview exercises.
+[Read the project →](projects/02-production-ai-application.md)
 
 ---
 
-## Why this is a DevEx portfolio
+## Engineering lens
 
-I don't separate engineering from developer relations.
+I use the fundamentals behind good engineering to reason about modern AI systems:
 
-**I BUILD** the system.
+**Design Thinking**
+Problem framing → users → journeys → constraints → trade-offs
 
-**I EVALUATE** whether it works and where it fails.
+**System Design**
+Boundaries → APIs → state → data → events → scale → failure modes
 
-**I EXPLAIN** the architecture and trade-offs.
+**DSA**
+Data modelling → complexity → retrieval → search → efficient execution
 
-**I TEACH** through tutorials and workshops.
+**Real-World Engineering**
+Observability → regression → security → cost → operability → developer experience
 
-**I IMPROVE** from developer feedback.
-
-Every major project follows:
-
-**Problem → Users → Context → Constraints → Architecture → Implementation → Failure → Validation → Communication → Feedback**
-
----
-
-## Casebook
-
-- **Context Engineering for Regression Automation** — repository context → living documentation → executable scenarios.
-- **Agentic Regression Investigation** — change-impact investigation with evidence and human review.
-- **AI Evaluation Is a Systems Problem** — ground truth, regression, observability and failure analysis.
-- **From Ambiguity to Architecture** — turning unclear requirements into explicit system decisions.
-- **Failure Modes Before Features** — designing around what can fail, not only the happy path.
-- **Developer Journey End to End** — documentation, examples, tooling and feedback as one system.
+The technology changes. The reasoning should remain solid.
 
 ---
 
-## Learn with the projects
+## Learn with the work
 
-**30-second read** → idea  
-**2-minute read** → architecture + trade-offs  
-**10-minute lab** → runnable example  
-**Workshop** → build it with me  
-**Case study** → understand the engineering decision
+**30-second** → understand the idea  
+**2-minute** → understand the architecture  
+**10-minute lab** → run it  
+**Deep dive** → understand the trade-offs  
+**Workshop** → build it  
+**Feedback** → improve it
 
-**The goal: make senior engineering knowledge reproducible.**
-
----
-
-## About me
-
-11+ years of enterprise software engineering across **full-stack applications, banking workflows, distributed systems, quality engineering, AI evaluation and developer experience**.
-
-I am building a public body of work at the intersection of **AI engineering and developer experience** — with a focus on making complex systems easier to build, evaluate, explain and operate.
-
-Where the underlying work is proprietary, the public material uses generalized patterns, synthetic examples and reusable learning artifacts.
+The goal is to make senior engineering knowledge **reproducible for developers**.
 
 ---
 
 <div align="center">
 
-### Build it. Understand it. Explain it. Teach it.
+### Build · Explain · Teach · Improve
 
 [Connect on LinkedIn](https://www.linkedin.com/in/nidhiverma200/)
 
