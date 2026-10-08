@@ -69,22 +69,30 @@ A full-stack AI application that treats AI as a software system, not a chatbot d
 
 [Read the project →](projects/02-production-ai-application.md)
 
+### 03 — AI Systems, Explained
+
+A runnable six-part series that breaks an agentic system into primitives instead of treating "agent" as magic.
+
+**Model → Tool → Agent → MCP → Skills → SDK**
+
+Start here: [Part 2 — Tool](pattern-to-production/agent-from-zero/part-2-tool)
+
 ---
 
 ## Engineering lens
 
 I use the fundamentals behind good engineering to reason about modern AI systems:
 
-**Design Thinking**
+**Design Thinking**  
 Problem framing → users → journeys → constraints → trade-offs
 
-**System Design**
+**System Design**  
 Boundaries → APIs → state → data → events → scale → failure modes
 
-**DSA**
+**DSA**  
 Data modelling → complexity → retrieval → search → efficient execution
 
-**Real-World Engineering**
+**Real-World Engineering**  
 Observability → regression → security → cost → operability → developer experience
 
 The technology changes. The reasoning should remain solid.
