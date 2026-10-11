@@ -20,11 +20,11 @@ The missing layer is context.
 
 Recent software-engineering research makes the limitation visible.
 
-SWE-bench frames evaluation around real GitHub issues and corresponding repository changes instead of isolated coding questions. SWE-agent shows that the tools and interfaces available to an agent materially affect how well it can navigate and modify a repository. citeturn240812search8turn449377search0
+SWE-bench frames evaluation around real GitHub issues and corresponding repository changes instead of isolated coding questions. SWE-agent shows that the tools and interfaces available to an agent materially affect how well it can navigate and modify a repository ([SWE-bench](https://www.alphaxiv.org/abs/2310.06770), [SWE-agent](https://www.alphaxiv.org/abs/2405.15793)).
 
-A 2025 survey on context engineering describes retrieval, processing and management of contextual information as a broader discipline around RAG, memory, tools and multi-agent systems. citeturn848808search1
+A 2025 survey on context engineering describes retrieval, processing and management of contextual information as a broader discipline around RAG, memory, tools and multi-agent systems ([survey](https://www.alphaxiv.org/abs/2507.13334)).
 
-A 2026 benchmark, CL4SE, goes further for software engineering by separating project-specific context, interpretable examples, procedural decision context and positive/negative context, then testing their effects on code generation, summarization, review and patch correctness. citeturn848808search3
+A 2026 benchmark, CL4SE, goes further for software engineering by separating project-specific context, interpretable examples, procedural decision context and positive/negative context, then testing their effects on code generation, summarization, review and patch correctness ([CL4SE](https://www.alphaxiv.org/abs/2602.23047)).
 
 **Engineering implication:** context is not incidental input. It is part of the system under test.
 
@@ -118,7 +118,7 @@ A small source-code change can still have a wide behavioural blast radius. Conve
 
 ## A bounded judge, not an oracle
 
-LLM-as-a-judge research shows why semantic evaluation needs guardrails. Strong judges can agree with human preferences in some settings, but other work demonstrates substantial evaluator bias, including sensitivity to response ordering. citeturn240812search2turn240812search1
+LLM-as-a-judge research shows why semantic evaluation needs guardrails. Strong judges can agree with human preferences in some settings, but other work demonstrates substantial evaluator bias, including sensitivity to response ordering ([survey](https://www.alphaxiv.org/abs/2411.15594), [ordering bias](https://www.alphaxiv.org/abs/2305.17926)).
 
 So the evaluator should receive:
 
