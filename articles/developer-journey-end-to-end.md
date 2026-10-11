@@ -1,5 +1,7 @@
 # Designing a Developer Journey End to End
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A technical product is not experienced as an API. It is experienced as a journey: discover, understand, try, integrate, debug, operate, and expand. A broken step anywhere can make a technically correct system fail in practice.
 
 > **2-minute read:** Map the journey before optimizing the interface. Turn each point of friction into an engineering hypothesis, then build one vertical slice that proves the complete path. Measure where people fail, search, abandon, or ask for help, and feed those signals back into the product, examples, documentation, and tooling.

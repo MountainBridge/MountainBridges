@@ -1,5 +1,7 @@
 # Reference Implementations: From Demo to Usable System
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A demo proves that technology can work. A reference implementation proves that another engineer can understand it, run it, modify it, hit a failure, and know what changes before production.
 
 > **2-minute read:** Start with a real task, not an API feature. Keep the architecture small but honest, show one meaningful failure path, make the code explain the design, and document what was intentionally simplified. The best example is a transferable engineering decision—not a polished toy.

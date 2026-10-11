@@ -1,5 +1,7 @@
 # Design Thinking for Engineers: Start With the Journey, Not the Technology
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** Start with what a real person needs to accomplish, trace the friction through the journey, then choose technology. The best technical solution often emerges after the problem is framed correctly.
 
 > **2-minute read:** Replace “what can we build?” with “what outcome are we trying to improve?” Define the person, goal, journey and friction. Separate the symptom from the underlying problem, then bring constraints—contracts, security, reliability, ownership, latency, cost and migration—into the design. A good solution has an implementation and a way to observe whether the journey actually improved.

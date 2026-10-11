@@ -1,5 +1,7 @@
 # Platform Problem Pattern Catalog
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 The casebook is intended to grow into a reusable library of engineering strategies. It does not claim to enumerate literally every problem in software; it establishes a taxonomy so new problems can be mapped to known failure modes and solution patterns instead of starting from zero.
 
 ## Platform domains

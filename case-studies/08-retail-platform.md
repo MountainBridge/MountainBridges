@@ -1,5 +1,7 @@
 # Retail Platform: Search, Recommendations, Inventory, Checkout
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A retail platform is a coordination problem between catalog, search, recommendations, inventory, pricing, checkout, fulfillment and customer trust. The key design move is to separate fast-changing derived views from authoritative business state.
 
 > **2-minute read:** A shopper expects search to be fast, recommendations to feel relevant, prices and stock to be trustworthy, and checkout to behave consistently even when inventory or payment systems are under load. The platform should use read-optimized indexes and caches without making them the source of truth. Recommendation systems need explicit objectives, experimentation and protection against feedback loops. Inventory needs reservation semantics rather than a naive stock counter.

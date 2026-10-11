@@ -1,5 +1,7 @@
 # Case 04 — When AI Looks Right but Is Wrong
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 ## The problem
 
 A conventional software test can often assert an exact value. AI systems are different: the output can be syntactically valid, fluent and plausible while still being incorrect, incomplete, unsafe or poorly grounded.

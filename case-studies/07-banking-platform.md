@@ -1,5 +1,7 @@
 # Banking Platform: Payments, Fraud, Loans, and the Consistency Problem
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A banking platform is not one transaction API. It is a set of tightly coupled workflows where money movement, risk, identity, ledger correctness, asynchronous processing, customer experience, and auditability must agree. The interesting engineering problem is what happens when they do not.
 
 > **2-minute read:** A customer presses **Pay**. The screen spins. The payment service has accepted the request, but the fraud check is slow and the downstream processor has not responded. The customer presses **Pay** again. Now we have a simple product interaction that has become a distributed-systems problem: did we create one payment or two, where is the authoritative state, what can safely be retried, and what should the customer see? Now imagine the same platform handling a loan application, where a document check, deterministic policy, a risk model, and a human reviewer may all contribute to one decision. The architecture has to make those states explicit, preserve evidence, and make failure recoverable rather than hiding it behind a successful-looking API response.

@@ -1,5 +1,7 @@
 # LLM Evaluation Is a Systems Problem, Not Just a Prompt Problem
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A fluent answer is not proof that an AI system worked. Evaluate the full path—intent, context, retrieval, tools, output and decision—and make every verdict traceable to evidence.
 
 > **2-minute read:** Think of an AI evaluation system like software testing for behaviour rather than strings. First define the user journey and what “correct” means. Then test execution, representative scenarios, edge cases and downstream impact. Use deterministic assertions for deterministic properties and model-based judges only for genuinely semantic properties. A judge should receive the scenario, rubric, permitted evidence, calibration examples and explicit failure conditions. Research shows LLM judges can correlate well with human preferences in some settings, but also exhibit biases such as position sensitivity; the engineering answer is calibration, multiple evidence signals and human escalation for uncertain cases.

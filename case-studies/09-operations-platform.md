@@ -1,5 +1,7 @@
 # Operations Platform: Dispatch, Queues, Workforce, and Exceptions
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** Operations platforms turn a constantly changing stream of work, people, capacity and constraints into executable decisions. The hard part is not picking a scheduler; it is making decisions resilient to late information, partial failure and changing priorities.
 
 > **2-minute read:** Imagine a platform dispatching field technicians, delivery agents, or service workers. Jobs arrive continuously, workers have locations and skills, customers have time windows, and the system must react when someone cancels, traffic changes, or capacity disappears. Treat the planner as a decision engine surrounded by state, rules, events, simulation and human override. Optimize for useful decisions under uncertainty, not a mathematically perfect plan that becomes stale before execution.

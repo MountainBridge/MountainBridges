@@ -1,5 +1,7 @@
 # Regression Was a Context Problem
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 ## The idea
 
 Regression testing is usually framed as a test-automation problem.

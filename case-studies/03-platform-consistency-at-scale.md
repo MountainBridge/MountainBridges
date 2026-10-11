@@ -1,5 +1,7 @@
 # Case 03 — When Contribution Creates Fragmentation
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 ## The problem
 
 A successful platform often grows by accepting more contributors. That sounds like a pure positive until every contributor starts making slightly different decisions.

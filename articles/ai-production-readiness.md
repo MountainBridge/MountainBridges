@@ -1,5 +1,7 @@
 # Making AI Systems Production-Ready
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A prototype asks whether a model can produce an answer. Production asks when it may act, what context it may use, how the result is verified, and what happens when it is wrong.
 
 > **2-minute read:** Treat the model as one uncertain component inside a larger system. Put policy and validation before it, explicit context around it, controlled tool boundaries after it, and verification beside the output. Then evaluate model, prompt, retrieval, tools, and policies as one behavioural release surface. New research on software engineering with GenAI increasingly points toward specification quality, architectural reasoning, oversight, and governance becoming more important as routine coding becomes easier.

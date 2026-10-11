@@ -1,5 +1,7 @@
 # Case 05 — When Regression Becomes a Knowledge Problem
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 ## The problem
 
 A regression suite can contain hundreds of tests and still miss the change that matters.

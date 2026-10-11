@@ -1,5 +1,7 @@
 # Building a Challenge Quality System: From Expert Knowledge to Reliable Engineering Problems
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A high-quality coding challenge is not just a question. It is a small specification system: problem intent, constraints, examples, canonical solution, hints, tests, difficulty, failure modes, and evidence that the task measures the intended skill.
 
 > **2-minute read:** The scaling problem is not “how do we write more questions?” It is “how do we let many experts contribute questions without quality drifting?” Treat each challenge like a technical artifact with a schema, lifecycle and quality gates. Separate authoring from validation, use automated checks for deterministic properties, expert review for semantic quality, and telemetry from attempts to detect ambiguity, difficulty problems, leakage or weak discrimination. AI can accelerate drafting and analysis, but the authoritative contract and review process must remain inspectable.

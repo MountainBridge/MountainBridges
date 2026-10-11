@@ -1,5 +1,7 @@
 # Scaling Technical Knowledge: From One Expert to a System Others Can Use
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 A technically strong system can still be hard to adopt when the knowledge required to use it lives with one or two people.
 
 That creates a hidden bottleneck: every new engineer asks the same questions, every edge case is rediscovered, and every useful lesson depends on who happens to be available.

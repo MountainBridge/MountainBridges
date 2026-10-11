@@ -1,5 +1,7 @@
 # Assessment Platform: Realistic Challenges, Quality Gates, and Trustworthy Evaluation
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A serious technical assessment is a product, not a question bank. The platform must model realistic work, initialize reproducible environments, evaluate multiple signals, detect cheating and adversarial behaviour, and produce evidence that a decision-maker can trust.
 
 > **2-minute read:** Build an assessment platform where candidates solve multi-file projects instead of isolated snippets. Each challenge has a problem statement, repository, setup contract, visible examples, hidden tests, evaluation rubric and expected failure modes. The platform records code, runtime outputs and selected interaction evidence. Scoring should combine deterministic correctness, engineering quality, task-specific behaviour and—in AI-native workflows—how well the candidate can explain and defend the system they built.

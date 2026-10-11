@@ -1,5 +1,7 @@
 # From Ambiguity to Architecture: The Code Wasn't the Hard Part
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** The fastest way to build the wrong system is to start coding before understanding the problem. Good engineering starts with the person, the journey and the constraints — then turns that understanding into architecture and evidence.
 
 A request can sound simple:

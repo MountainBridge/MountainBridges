@@ -1,5 +1,7 @@
 # Architecture Decisions That Survive the Original Team
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** Code survives people. The reasoning behind architectural choices often does not. A small decision record preserves context, alternatives, trade-offs, evidence, consequences, and the signal that should trigger a revisit.
 
 > **2-minute read:** Treat architecture decisions as testable hypotheses, not permanent opinions. Capture the problem, constraints, alternatives, why one option won, and what would make the decision wrong later. This reduces rediscovery, makes review easier, and gives future engineers a way to evolve the system without reverse-engineering history from code.

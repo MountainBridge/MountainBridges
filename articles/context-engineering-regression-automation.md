@@ -1,5 +1,7 @@
 # Context Engineering for Regression Automation
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** Regression breaks down when the reasoning behind tests lives in people’s heads. Preserve codebase context as structured knowledge, map changes to affected journeys, then combine deterministic checks with bounded semantic evaluation.
 
 > **2-minute read:** A code diff tells you what changed, not necessarily what behaviour could break. Build a context layer from source code, configuration, contracts, dependencies, failure modes and change history. Turn that context into small, reviewable artifacts—journeys, contracts, dependencies and risks. When code changes, use those artifacts to identify impacted scenarios and generate candidate regressions. Keep hard assertions deterministic; use an LLM for semantic mapping or judgement only where it adds value, and retain the evidence behind its decision. This turns regression from “run everything and inspect red tests” into a traceable change-impact system.

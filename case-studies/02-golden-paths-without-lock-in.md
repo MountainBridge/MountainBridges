@@ -1,5 +1,7 @@
 # Case 02 — A Paved Road Without a Prison
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 ## The problem
 
 An engineering organization wants consistency: secure defaults, standard observability, deployment conventions, supported frameworks and predictable operations.

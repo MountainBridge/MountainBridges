@@ -1,5 +1,7 @@
 # Event Streaming Platform: Live Media at YouTube, Netflix, and Prime Video Scale
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A streaming platform is a distributed real-time system: ingest events, route them, maintain state, trigger recommendations, track playback, observe failures, and survive traffic spikes without turning every consumer into a tightly coupled dependency.
 
 > **2-minute read:** Model the platform as two planes. The **data plane** moves playback, catalog, entitlement and telemetry events. The **decision plane** consumes those streams to update recommendations, detect anomalies, trigger operational workflows and build derived views. Kafka/Pub/Sub-like infrastructure decouples producers from consumers, but correctness still needs explicit ordering, deduplication, replay, schema evolution, backpressure and idempotent consumers.

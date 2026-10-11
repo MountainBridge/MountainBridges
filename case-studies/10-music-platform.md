@@ -1,5 +1,7 @@
 # Music Platform: Discovery, Personalization, Freshness, and Long-Term Value
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A music platform is a ranking system inside a feedback loop. The service must balance known taste, discovery, freshness, catalog coverage, latency, creator exposure, and user satisfaction while constantly learning from its own recommendations.
 
 > **2-minute read:** A listener may want familiar songs at one moment and discovery at another. New users have almost no history. New tracks have almost no interactions. Recommendations change behaviour, which changes the training data, which changes future recommendations. A robust platform therefore separates candidate generation, ranking, policy, exploration and evaluation, and makes feedback-loop effects visible.

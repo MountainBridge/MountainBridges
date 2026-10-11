@@ -1,5 +1,7 @@
 # Failure Modes Before Features
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A feature spec describes what should happen. Production is defined by what happens when dependencies time out, data is stale, requests repeat, or AI produces a convincing mistake. Design those failures before polishing the happy path.
 
 > **2-minute read:** Build a failure map before selecting architecture. For each important journey, identify the failure, user impact, detection signal, recovery strategy, and ownership. Then let those risks drive queues, retries, idempotency, caching, circuit breakers, fallbacks, or human review. The architecture becomes a response to reality instead of a diagram of the happy path.

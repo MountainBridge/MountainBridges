@@ -1,5 +1,7 @@
 # Medical Platform: EHR Interoperability, Evidence, Workflow, and Safety
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 > **30-second read:** A medical platform must coordinate heterogeneous records, clinical workflows, permissions, evidence and human decisions. The strongest architecture keeps structured patient state deterministic and uses AI where it improves information access or reasoning without hiding uncertainty.
 
 > **2-minute read:** Build a reference clinical platform with an EHR, patient timeline, clinician workspace, orders/results and administrative workflows. The platform should exchange data using FHIR-compatible resources, preserve provenance, enforce role-based access, and treat clinical actions as state transitions that require verification. AI can summarize records, retrieve evidence or assist with workflows, but the system should make every consequential action inspectable and reversible where possible.

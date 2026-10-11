@@ -1,5 +1,7 @@
 # Case 01 — When Information Fragments
 
+> *Personal views. Examples are generalized and do not describe any employer's systems, data or processes.*
+
 ## The problem
 
 A growing engineering organization can have all the ingredients of a working system—services, APIs, repositories, deployment tooling, documentation and experts—while making a simple task surprisingly difficult:
