@@ -119,7 +119,7 @@ Ingest playback events, process streams, maintain derived state, support replay 
 
 **Reference:** Netflix, YouTube and Prime Video engineering patterns.
 
-[Read the case](13-event-streaming-platform.md)
+[Read the case](14-event-streaming-platform.md)
 
 ## Cross-platform problem catalog
 
