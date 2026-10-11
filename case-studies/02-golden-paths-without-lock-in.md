@@ -24,13 +24,13 @@ flowchart LR
 
 ## Reference case — Google Cloud / Golden Paths
 
-Google Cloud describes Golden Paths as opinionated, self-service templates for common engineering tasks. Its guidance emphasizes a single clear method for a specific task, reduced cognitive load, an end-to-end development-to-production path, self-service access, transparent abstractions, flexibility, and optional adoption rather than forced compliance. citeturn392938search0
+Google Cloud describes Golden Paths as opinionated, self-service templates for common engineering tasks. Its guidance emphasizes a single clear method for a specific task, reduced cognitive load, an end-to-end development-to-production path, self-service access, transparent abstractions, flexibility, and optional adoption rather than forced compliance ([Google Cloud: Golden Paths](https://cloud.google.com/blog/products/application-development/golden-paths-for-engineering-execution-consistency)).
 
 The critical idea is **opinionated, not opaque**. Developers should be able to use the default safely while still understanding what sits underneath when debugging or optimizing.
 
 ## Reference case — Spotify
 
-Spotify's Golden Paths are described as “opinionated and supported paths,” with tutorials and supporting documentation. Their experience also shows the maintenance problem: long paths cross team boundaries, ownership becomes distributed, and dependencies between documentation sections create friction. citeturn392938search1
+Spotify's Golden Paths are described as “opinionated and supported paths,” with tutorials and supporting documentation. Their experience also shows the maintenance problem: long paths cross team boundaries, ownership becomes distributed, and dependencies between documentation sections create friction ([Spotify Engineering: Golden Paths](https://engineering.atspotify.com/2020/8/how-we-use-golden-paths-to-solve-fragmentation-in-our-software-ecosystem)).
 
 ## The engineering move
 

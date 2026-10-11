@@ -173,7 +173,7 @@ The key is to turn usage data into **content improvement signals**, not vanity s
 
 HackerRank's public product documentation describes its challenge library as thousands of problems across programming languages and concepts, and its glossary distinguishes “Projects Questions” as container-based real-world challenges spanning areas such as frontend, backend, full-stack, DevOps, data science and databases. Its current platform also exposes question insights and challenge results as part of the assessment workflow.
 
-HackerRank's June 2026 Orchestrate event provides an especially useful reference case: participants received a curated bank of 29 tickets containing edge cases, prompt injection and jailbreaking attempts, and then submitted code, outputs and transcripts before completing an AI Judge Interview. The retrieval architecture, model, framework and programming language were intentionally left open. citeturn667608search10turn667608search5
+HackerRank's June 2026 Orchestrate event provides an especially useful reference case: participants received a curated bank of tickets containing edge cases, prompt injection and jailbreaking attempts, and then submitted code, outputs and transcripts before completing an AI Judge Interview. The retrieval architecture, model, framework and programming language were intentionally left open ([HackerRank Orchestrate, June 2026](https://github.com/interviewstreet/hackerrank-orchestrate-june26)).
 
 The lesson is powerful: **a technical task can be designed as an environment that tests reasoning, system choices and failure handling—not merely whether a final answer compiles.**
 

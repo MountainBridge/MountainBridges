@@ -22,7 +22,7 @@ The hard problem is not “how do we control contributors?” It is:
 
 ## Reference case — Shopify CLI
 
-Shopify describes an earlier Ruby CLI where contributions were loosely aligned and produced fragmentation. For the Node CLI, the team introduced shared code patterns, UI patterns/components, conventions and principles, packaged common functionality, and used static analysis to automate parts of the consistency model. citeturn392938search3
+Shopify describes an earlier Ruby CLI where contributions were loosely aligned and produced fragmentation. For the Node CLI, the team introduced shared code patterns, UI patterns/components, conventions and principles, packaged common functionality, and used static analysis to automate parts of the consistency model ([Shopify Engineering: Overhauling Shopify CLI](https://shopify.engineering/overhauling-shopify-cli-for-a-better-developer-experience)).
 
 This is an important distinction: consistency was moved from informal knowledge into **interfaces, patterns and tooling**.
 

@@ -105,7 +105,7 @@ Analytics RecSys Fraud Operations
 
 The producer emits the fact. Consumers decide what the fact means for their own responsibility.
 
-Google Cloud's current event-driven architecture guidance explicitly contrasts queue-driven systems with shared-topic event streams, noting that new consumers can subscribe without modifying the originating system. citeturn545344search6
+Google Cloud's current event-driven architecture guidance explicitly contrasts queue-driven systems with shared-topic event streams, noting that new consumers can subscribe without modifying the originating system ([Google Cloud: Event-driven architecture with Pub/Sub](https://docs.cloud.google.com/solutions/event-driven-architecture-pubsub)).
 
 ## Ordering is not global magic
 
@@ -155,13 +155,13 @@ This is one reason to treat event schemas, retention and compatibility as first-
 
 ## Netflix reference case
 
-Netflix has documented using Kafka for cross-region propagation in its Simone distributed simulation service. A server publishes lifecycle events to Kafka; client instances consume them and maintain local state, while events also carry simulation results back through the platform. The architecture demonstrates a recurring pattern: durable event propagation + local read state + explicit lifecycle transitions. citeturn545344search1
+Netflix has documented using Kafka for cross-region propagation in its Simone distributed simulation service. A server publishes lifecycle events to Kafka; client instances consume them and maintain local state, while events also carry simulation results back through the platform. The architecture demonstrates a recurring pattern: durable event propagation + local read state + explicit lifecycle transitions ([Netflix TechBlog: Simone](https://netflixtechblog.com/simone-a-distributed-simulation-service-b2c85131ca1b)).
 
-Netflix has also described centralizing data-movement capabilities behind reusable abstractions because mission-critical systems such as Member, Billing, Recommendations and Subscriptions depend on Cassandra. The lesson is that streaming/data infrastructure becomes a platform when common operational complexity is encoded once and exposed through reusable workflows. citeturn545344search3
+Netflix has also described centralizing data-movement capabilities behind reusable abstractions because mission-critical systems such as Member, Billing, Recommendations and Subscriptions depend on Cassandra. The lesson is that streaming/data infrastructure becomes a platform when common operational complexity is encoded once and exposed through reusable workflows ([Netflix TechBlog: Cassandra Data Movement](https://medium.com/netflix-techblog/the-evolution-of-cassandra-data-movement-at-netflix-6e13329c80a1)).
 
 ## YouTube reference case: recommendation is a streaming consumer
 
-YouTube's recommendation research separates **candidate generation** from **ranking**. The system turns a massive interaction history into a manageable candidate set, then applies a separate ranking model using richer user/context signals. citeturn545344search0
+YouTube's recommendation research separates **candidate generation** from **ranking**. The system turns a massive interaction history into a manageable candidate set, then applies a separate ranking model using richer user/context signals ([Deep Neural Networks for YouTube Recommendations](https://research.google/pubs/deep-neural-networks-for-youtube-recommendations/)).
 
 The event-streaming casebook implementation therefore treats recommendation as a consumer of playback and interaction events:
 
@@ -181,7 +181,7 @@ Homepage / next-video API
 
 ## Prime Video reference case: streaming operations are also a data problem
 
-Prime Video researchers describe testing live-event traffic such as Thursday Night Football and VOD events such as Rings of Power, then using graph-based anomaly detection to identify microservice behaviours under event traffic that ordinary load tests may miss. They also describe diff-aware deployment risk assessment for live-event change management. citeturn545344search2turn545344search15
+Prime Video researchers describe testing live-event traffic such as Thursday Night Football and VOD events such as Rings of Power, then using graph-based anomaly detection to identify microservice behaviours under event traffic that ordinary load tests may miss. They also describe diff-aware deployment risk assessment for live-event change management.
 
 That gives us another reusable pattern:
 

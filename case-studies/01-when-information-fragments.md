@@ -26,9 +26,9 @@ flowchart TD
 
 ## Reference case — Spotify / Backstage
 
-Spotify describes reaching a point where infrastructure became fragmented and engineers spent more time finding APIs, framework versions, service ownership and documentation than building software. Backstage emerged as an abstraction layer over infrastructure and tooling, combining a software catalog, templates and documentation discovery. citeturn392938search2turn392938search5
+Spotify describes reaching a point where infrastructure became fragmented and engineers spent more time finding APIs, framework versions, service ownership and documentation than building software. Backstage emerged as an abstraction layer over infrastructure and tooling, combining a software catalog, templates and documentation discovery ([Backstage: The Spotify Story](https://backstage.io/docs/overview/background)).
 
-TechDocs extends this idea by keeping Markdown documentation with code and publishing it centrally. Spotify reported that TechDocs accounted for about 20% of Backstage traffic in its 2020 announcement; current Backstage documentation describes thousands of documentation sites. citeturn392938search1turn392938search4
+TechDocs extends this idea by keeping Markdown documentation with code and publishing it centrally. Spotify reported that TechDocs accounted for about 20% of Backstage traffic in its 2020 announcement; current Backstage documentation describes thousands of documentation sites ([Announcing TechDocs](https://backstage.io/blog/2020/09/08/announcing-tech-docs), [Backstage TechDocs docs](https://backstage.io/docs/features/techdocs/)).
 
 ## The engineering move
 
