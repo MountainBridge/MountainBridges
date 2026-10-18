@@ -1,121 +1,73 @@
-<table>
-<tr>
-<td width="58%" valign="middle">
+# Nidhi Verma — Senior Software Engineer
 
-# Nidhi Verma
+**Enterprise platforms · Full-stack engineering · Reliability · AI engineering**
 
-### AI Engineering · Full-Stack · Developer Experience
+I build and improve software systems where correctness, maintainability and developer experience matter. My background spans enterprise engineering, frontend and full-stack applications, modernization, regression engineering and technical communication.
 
-**I build and teach reliable AI-powered software.**
+**11+ years of enterprise engineering experience** across software delivery, system behavior, testing and reliability.
 
-11+ years of enterprise engineering across full-stack applications, distributed systems, quality engineering and AI evaluation.
-
-**From Context → Confidence**
-
-[LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [Engineering Casebook](https://github.com/MountainBridge/MountainBridges)
-
-</td>
-
-<td width="42%" valign="middle">
-
-<img src="assets/nidhi-devrel-home.svg" width="100%" alt="Nidhi Verma — AI Engineering, Full-Stack and Developer Experience" />
-
-</td>
-</tr>
-</table>
+- **LinkedIn:** [linkedin.com/in/nidhiverma200](https://www.linkedin.com/in/nidhiverma200/)
+- **Engineering casebook:** this repository
+- **Runnable learning example:** [Agent From Zero — Part 2: Tool](pattern-to-production/agent-from-zero/part-2-tool)
 
 ---
 
-## What I am building
+## Engineering focus
 
-<table>
-<tr>
-<td align="center" width="20%"><b>AI ENGINEERING</b><br/><sub>Agents · RAG · MCP · Evaluation</sub></td>
-<td align="center" width="20%"><b>FULL-STACK</b><br/><sub>React · TypeScript · Node · Java</sub></td>
-<td align="center" width="20%"><b>RELIABILITY</b><br/><sub>Regression · Drift · Evidence</sub></td>
-<td align="center" width="20%"><b>ARCHITECTURE</b><br/><sub>Distributed Systems · Cloud</sub></td>
-<td align="center" width="20%"><b>DEVEX</b><br/><sub>Docs · Tutorials · Workshops</sub></td>
-</tr>
-</table>
-
-## The question I am exploring
-
-> **How do we make AI-powered software easier for developers to build, test, understand and trust?**
-
-My current answer is a continuous engineering loop:
-
-**BUILD → EVALUATE → EXPLAIN → TEACH → IMPROVE**
-
-with **design thinking, system design, data structures & algorithms, failure-mode analysis and real-world constraints** underneath it.
-
----
+| Area | Focus |
+|---|---|
+| Product engineering | React, TypeScript, JavaScript, APIs, frontend architecture |
+| Enterprise systems | Banking workflows, application modernization, integration boundaries |
+| Reliability | Regression strategy, failure analysis, evidence-driven debugging |
+| AI engineering | Bounded tool use, context grounding, evaluation and regression concepts |
+| Developer experience | Technical writing, runnable examples, architecture explanations |
 
 ## Featured work
 
-### 01 — Agentic Regression Investigator
+### 1. Agentic Regression Investigator — design + implementation in progress
 
-A public synthetic reference implementation for answering more than **"did the test pass?"**
+A synthetic engineering case study exploring how repository context, scenarios, test evidence and bounded investigation can help engineers understand the impact of a change.
 
-**Change → Context → Scenarios → Regression → Drift → Investigation → Evidence → Human Decision**
+- [Project brief](projects/01-agentic-regression-investigator.md)
+- [Related article: Regression Was a Context Problem](articles/01-regression-was-a-context-problem.md)
 
-[Read the case study →](projects/01-agentic-regression-investigator.md)  
-[Read: Regression Was a Context Problem →](articles/01-regression-was-a-context-problem.md)
+**Status:** the project brief describes the intended workflow. Do not treat the full end-to-end system as complete until the runnable implementation and tests are published.
 
-### 02 — Production AI Application
+### 2. Production AI Application Engineering — architecture study
 
-A full-stack AI application that treats AI as a software system, not a chatbot demo.
+An architecture study of a full-stack AI application, covering API boundaries, retrieval, tools, evaluation, observability and safe operation.
 
-**React → API → RAG → Tools/MCP → Agents → Evaluation → Observability → CI/CD**
+- [Project brief](projects/02-production-ai-application.md)
 
-[Read the project →](projects/02-production-ai-application.md)
+**Status:** architecture and learning plan; not represented as a production deployment.
 
-### 03 — AI Systems, Explained
+### 3. Agent From Zero — runnable tool example
 
-A runnable six-part series that breaks an agentic system into primitives instead of treating "agent" as magic.
+A small Node.js example that demonstrates the boundary between a model's structured tool request and application-controlled execution.
 
-**Model → Tool → Agent → MCP → Skills → SDK**
+- [Open Part 2: Tool](pattern-to-production/agent-from-zero/part-2-tool)
 
-Start here: [Part 2 — Tool](pattern-to-production/agent-from-zero/part-2-tool)
+This is a focused teaching example, not a claim of a production-ready autonomous coding agent.
 
----
+## Engineering principles
 
-## Engineering lens
+- Prefer evidence over unsupported claims.
+- Keep model reasoning separate from application-controlled tool execution.
+- Test failure modes, not only happy paths.
+- Make architectural trade-offs and limitations explicit.
+- Treat security, observability and maintainability as engineering requirements.
+- Keep public examples synthetic and free of employer code, customer data and credentials.
 
-I use the fundamentals behind good engineering to reason about modern AI systems:
+## How I explain technical work
 
-**Design Thinking**  
-Problem framing → users → journeys → constraints → trade-offs
+For each substantial topic, the goal is to provide:
+1. A short explanation of the problem.
+2. The architecture and key trade-offs.
+3. A reproducible example where practical.
+4. Tests and failure cases.
+5. References and limitations.
 
-**System Design**  
-Boundaries → APIs → state → data → events → scale → failure modes
+## Connect
 
-**DSA**  
-Data modelling → complexity → retrieval → search → efficient execution
+For professional background and current experience, visit [LinkedIn](https://www.linkedin.com/in/nidhiverma200/).
 
-**Real-World Engineering**  
-Observability → regression → security → cost → operability → developer experience
-
-The technology changes. The reasoning should remain solid.
-
----
-
-## Learn with the work
-
-**30-second** → understand the idea  
-**2-minute** → understand the architecture  
-**10-minute lab** → run it  
-**Deep dive** → understand the trade-offs  
-**Workshop** → build it  
-**Feedback** → improve it
-
-The goal is to make senior engineering knowledge **reproducible for developers**.
-
----
-
-<div align="center">
-
-### Build · Explain · Teach · Improve
-
-[Connect on LinkedIn](https://www.linkedin.com/in/nidhiverma200/)
-
-</div>
