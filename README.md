@@ -1,73 +1,99 @@
-# Nidhi Verma — Senior Software Engineer
+![Nidhi Verma — From Context to Confidence](assets/nidhi-devrel-home.svg)
 
-**Enterprise platforms · Full-stack engineering · Reliability · AI engineering**
+# STOK.EED × MountainBridge
 
-I build and improve software systems where correctness, maintainability and developer experience matter. My background spans enterprise engineering, frontend and full-stack applications, modernization, regression engineering and technical communication.
+### Understand systems. Build them. Verify them. Explain them.
 
-**11+ years of enterprise engineering experience** across software delivery, system behavior, testing and reliability.
+This is the engineering casebook behind **STOK.EED**: practical explorations of AI agents, tools, MCP, context engineering, reverse engineering, software architecture, and reliable AI systems.
 
-- **LinkedIn:** [linkedin.com/in/nidhiverma200](https://www.linkedin.com/in/nidhiverma200/)
-- **Engineering casebook:** this repository
-- **Runnable learning example:** [Agent From Zero — Part 2: Tool](pattern-to-production/agent-from-zero/part-2-tool)
+The goal is simple: **move from an interesting idea to an explanation you can inspect, test, and reproduce.**
+
+**Nidhi Verma · Senior Software Engineer · 11+ years in software engineering**
+
+[Instagram · STOK.EED](https://www.instagram.com/stok.eed/) · [LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [Browse the casebook](#start-here)
 
 ---
 
-## Engineering focus
+## Start here
 
-| Area | Focus |
+If you're new to this work, follow this path:
+
+1. **Understand the building blocks** — [Agent From Zero: Tool](pattern-to-production/agent-from-zero/part-2-tool/README.md)  
+   See the boundary between a model's tool request and application-controlled execution.
+2. **Connect the idea to engineering practice** — [Agentic Regression Investigator](projects/01-agentic-regression-investigator.md)  
+   Explore a design for tracing changes to affected journeys, tests, evidence, and human review. **Design and implementation in progress.**
+3. **Think beyond the demo** — [Production AI Application Engineering](projects/02-production-ai-application.md)  
+   Study the architecture and quality questions involved in building, evaluating, observing, and operating AI features. **Architecture study, not a claimed production deployment.**
+4. **Read the engineering story** — [Regression Was a Context Problem](articles/01-regression-was-a-context-problem.md)  
+   Why reliable answers depend on good context, traceable evidence, and testable outcomes.
+
+## What STOK.EED explores
+
+| Theme | The question |
 |---|---|
-| Product engineering | React, TypeScript, JavaScript, APIs, frontend architecture |
-| Enterprise systems | Banking workflows, application modernization, integration boundaries |
-| Reliability | Regression strategy, failure analysis, evidence-driven debugging |
-| AI engineering | Bounded tool use, context grounding, evaluation and regression concepts |
-| Developer experience | Technical writing, runnable examples, architecture explanations |
+| **Agents, tools & MCP** | What is the model responsible for, what does the application execute, and how do tools connect systems? |
+| **Context engineering** | How do we give a system relevant, versioned evidence instead of relying on a long prompt? |
+| **Reverse engineering** | How can we infer a system's behavior, trace its architecture, and test our understanding? |
+| **AI evaluation & regression** | How do we detect when a model, prompt, retrieval source, or code change makes behavior worse? |
+| **Architecture & reliability** | How should components interact, fail safely, and remain observable and maintainable? |
+| **Developer experience** | How do we turn complex engineering ideas into runnable examples, clear diagrams, and useful learning paths? |
+
+The recurring method is **build → evaluate → explain → teach → improve**.
 
 ## Featured work
 
-### 1. Agentic Regression Investigator — design + implementation in progress
+### 01 · Agent From Zero — a focused runnable example
+A small teaching example for understanding tool calling and the boundary between model output and code execution.
 
-A synthetic engineering case study exploring how repository context, scenarios, test evidence and bounded investigation can help engineers understand the impact of a change.
+[Open the example →](pattern-to-production/agent-from-zero/part-2-tool/README.md)
 
-- [Project brief](projects/01-agentic-regression-investigator.md)
-- [Related article: Regression Was a Context Problem](articles/01-regression-was-a-context-problem.md)
+### 02 · Agentic Regression Investigator — in progress
+A synthetic reference design for connecting a code change to affected components, user journeys, test evidence, uncertainty, and recommended human review.
 
-**Status:** the project brief describes the intended workflow. Do not treat the full end-to-end system as complete until the runnable implementation and tests are published.
+[Read the project brief →](projects/01-agentic-regression-investigator.md) · [Read the companion article →](articles/01-regression-was-a-context-problem.md)
 
-### 2. Production AI Application Engineering — architecture study
+### 03 · Production AI Application Engineering — architecture study
+A learning blueprint covering application boundaries, retrieval, tool use, evaluation, observability, cost, latency, and safe operation.
 
-An architecture study of a full-stack AI application, covering API boundaries, retrieval, tools, evaluation, observability and safe operation.
+[Read the project brief →](projects/02-production-ai-application.md)
 
-- [Project brief](projects/02-production-ai-application.md)
+## How each case study should work
 
-**Status:** architecture and learning plan; not represented as a production deployment.
+For substantial topics, the intended learning path is:
 
-### 3. Agent From Zero — runnable tool example
+- **30-second read:** the idea and why it matters.
+- **2-minute explanation:** the architecture, flow, and trade-offs.
+- **Inspectable evidence:** source references, diagrams, assumptions, and limitations.
+- **Try it yourself:** runnable code and tests where an implementation exists.
+- **Learn from failure:** edge cases, incorrect assumptions, and what changed after testing.
 
-A small Node.js example that demonstrates the boundary between a model's structured tool request and application-controlled execution.
+Not every topic in this casebook is a completed implementation. Each project states its current status; design documents are not presented as production systems.
 
-- [Open Part 2: Tool](pattern-to-production/agent-from-zero/part-2-tool)
+## Explore the repository
 
-This is a focused teaching example, not a claim of a production-ready autonomous coding agent.
+- [Projects](projects/) — project briefs and implementation status
+- [Articles](articles/) — engineering explanations
+- [Diagrams](diagrams/) — visual models and architecture flows
+- [Patterns](patterns/) — reusable engineering ideas
+- [Pattern to Production](pattern-to-production/) — focused learning examples
+- [Case Studies](case-studies/) — system investigations and applied reasoning
+- [Research](research/) — references and technical exploration
 
 ## Engineering principles
 
-- Prefer evidence over unsupported claims.
-- Keep model reasoning separate from application-controlled tool execution.
-- Test failure modes, not only happy paths.
-- Make architectural trade-offs and limitations explicit.
-- Treat security, observability and maintainability as engineering requirements.
-- Keep public examples synthetic and free of employer code, customer data and credentials.
-
-## How I explain technical work
-
-For each substantial topic, the goal is to provide:
-1. A short explanation of the problem.
-2. The architecture and key trade-offs.
-3. A reproducible example where practical.
-4. Tests and failure cases.
-5. References and limitations.
+- **Evidence over confident guesses.** Distinguish observed facts, inferences, and unknowns.
+- **Bounded tools over unrestricted execution.** Validate inputs and keep sensitive actions under application or human control.
+- **Tests over intuition.** Verify behavior, including failure and boundary cases.
+- **Honest status over hype.** Label prototypes, studies, and incomplete work accurately.
+- **Security by default.** Use synthetic examples; never publish employer code, customer data, tokens, or credentials.
+- **Teach what you can demonstrate.** Prefer a reproducible example over a diagram alone.
 
 ## Connect
 
-For professional background and current experience, visit [LinkedIn](https://www.linkedin.com/in/nidhiverma200/).
+Follow the experiments and short-form explanations on **[Instagram · STOK.EED](https://www.instagram.com/stok.eed/)**, and connect professionally on **[LinkedIn](https://www.linkedin.com/in/nidhiverma200/)**.
 
+If an idea from STOK.EED sparks a question, open an issue or discussion with the specific claim, example, or behavior you'd like to investigate.
+
+---
+
+<sub>MountainBridge is the casebook; STOK.EED is the public learning stream. The shared focus is engineering clarity: understand the system, test the claim, and explain the result.</sub>
