@@ -21,7 +21,7 @@ A pattern is complete only when it connects the problem to a decision process, a
 | Platform consistency | Golden path + self-service + transparent abstraction | `examples/README.md` |
 | Contribution at scale | Reusable primitives + review + extension boundaries | `patterns/scaling-technical-knowledge.md` + `research/evidence-base.md` |
 | AI coding agents | Repository context + tools + iteration + verification | `articles/ai-production-readiness.md` |
-| Challenge / assessment systems | Problem specification + canonical solution + hints + tests + rubric + review | `case-studies/hackerrank-fit.md` |
+| Challenge / assessment systems | Problem specification + canonical solution + hints + tests + rubric + review | `case-studies/06-building-a-challenge-quality-system.md` |
 
 ## Expansion roadmap
 
