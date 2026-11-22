@@ -6,7 +6,7 @@
 
 **STOK.EED** makes complex engineering ideas easier to understand. **MountainBridge** is the deeper casebook behind that content: the models, source references, architecture notes, experiments, tests, and runnable examples that turn a short video into something a developer can inspect and learn from.
 
-**Nidhi Verma · Senior Software Engineer · 11+ years in software engineering**
+**Nidhi Verma · Senior Full Stack Engineer · AI evaluation & reliability · 11+ years in software engineering**
 
 [Instagram · STOK.EED](https://www.instagram.com/stok.eed/) · [LinkedIn](https://www.linkedin.com/in/nidhiverma200/) · [Start with the content map](content/stokeed/02-series-to-casebook-map.md)
 
